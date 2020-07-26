@@ -7,6 +7,10 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css"
+  />
     <title>Shopper</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -19,6 +23,7 @@
       href="https://npmcdn.com/flickity@2/dist/flickity.css"
     />
     <link rel="stylesheet" href="style.css" />
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="./style.css" />
   </head>
@@ -174,74 +179,27 @@
       </div>
     </div>
 
-    <div
-      class="carousel"
-      data-flickity='{ "lazyLoad": 2, "initialIndex": 0, "wrapAround": "true" }'
-    >
-      <div class="carousel-cell">
-        <img
-          class="carousel-cell-image"
-          data-flickity-lazyload="./images/product.jpg"
-          alt="tulip"
-        />
-      </div>
-      <div class="carousel-cell">
-        <img
-          class="carousel-cell-image"
-          data-flickity-lazyload="./images/product.jpg"
-          alt="grapes"
-        />
-      </div>
-      <div class="carousel-cell">
-        <img
-          class="carousel-cell-image"
-          data-flickity-lazyload="./images/product.jpg"
-          alt="raspberries"
-        />
-      </div>
-      <div class="carousel-cell">
-        <img
-          class="carousel-cell-image"
-          data-flickity-lazyload="./images/product.jpg"
-          alt="wolf"
-        />
-      </div>
-      <div class="carousel-cell">
-        <img
-          class="carousel-cell-image"
-          data-flickity-lazyload="./images/product.jpg"
-          alt="sea"
-        />
-      </div>
-      <div class="carousel-cell">
-        <img
-          class="carousel-cell-image"
-          data-flickity-lazyload="./images/product.jpg"
-          alt="leaf droplets"
-        />
-      </div>
-      <div class="carousel-cell">
-        <img
-          class="carousel-cell-image"
-          data-flickity-lazyload="./images/product.jpg"
-          alt="gulls"
-        />
-      </div>
-      <div class="carousel-cell">
-        <img
-          class="carousel-cell-image"
-          data-flickity-lazyload="./images/product.jpg"
-          alt="touch screen"
-        />
-      </div>
-      <div class="carousel-cell">
-        <img
-          class="carousel-cell-image"
-          data-flickity-lazyload="./images/product.jpg"
-          alt="van"
-        />
-      </div>
+    <div class="carousel">
+    
+      <div class="img-container">
+      <img src="images/product.jpg" alt="image-cover" id="cover" />
     </div>
+
+    <div class="navigation">
+      <button id="prev" class="action-btn">
+        <i class="fas fa-backward"></i>
+      </button>
+      <button id="dot-1" class="dot"></button>
+      <button id="dot-2" class="dot"></button>
+      <button id="dot-3" class="dot"></button>
+      <button id="next" class="action-btn">
+        <i class="fas fa-forward"></i>
+      </button>
+    </div>
+
+
+    </div>
+
 
 
     <!-- Footer -->
@@ -262,8 +220,8 @@
     </div>
     <!-- Footer -->
 
-    <script src="https://npmcdn.com/flickity@2/dist/flickity.pkgd.js"></script>
-
+    <!--<script src="https://npmcdn.com/flickity@2/dist/flickity.pkgd.js"></script>  -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="app.js"></script>
   </body>
 </html>
