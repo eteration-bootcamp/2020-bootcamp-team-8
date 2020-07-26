@@ -167,6 +167,66 @@ body {
   transition: opacity 0.4s;
 }
 
+.footer{
+  background: #222;
+  color: #d3d3d3;
+  height: 300px;
+  position: relative;
+}
+
+.footer .footer-top{
+  
+  height: 250x;
+  padding: 50px;
+  position: relative;
+  text-align: center;
+  
+}
+.footer .footer-top .subscribe .email{
+  background: #5555;
+  width: 300px;
+  height: 50px;
+  border:none;
+  font-size: medium;
+  text-align: center;
+  
+}
+.footer .footer-top .subscribe .subscribe-button{
+  background: #3333;
+  width: 140px;
+  height: 50px;
+  border:0px;
+  font-size: medium;
+  text-align: center;
+  color: white;
+  border: none;
+  
+}
+.footer .footer-top .subscribe .subscribe-button:hover {
+  background-color: #4444;
+}
+
+.footer .footer-top .subscribe .subscribe-button:active {
+  background-color: #3333;
+  transform: translateY(4px);
+}
+
+
+
+
+.footer .footer-bottom{
+  background: #222;
+  color:#686868;
+  height: 50px;
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  padding-top: 20px;
+  
+}
+
 /* fade in lazy loaded image */
 .carousel-cell-image.flickity-lazyloaded,
 .carousel-cell-image.flickity-lazyerror {
