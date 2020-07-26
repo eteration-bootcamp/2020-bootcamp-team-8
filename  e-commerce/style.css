@@ -120,6 +120,27 @@ body {
   transition: box-shadow 0.3s ease-in-out;
 }
 
+.hero-item:first-child {
+  background-image: url('./images/shopWomen.jpg');
+  background-attachment: scroll;
+  background-repeat: no-repeat;
+  background-size: 30rem;
+}
+
+.hero-item:nth-child(even) {
+  background-image: url('./images/shopMen.jpg');
+  background-attachment: scroll;
+  background-repeat: no-repeat;
+  background-size: 35rem;
+}
+
+.hero-item:last-child {
+  background-image: url('./images/shopKids.jpg');
+  background-attachment: scroll;
+  background-repeat: no-repeat;
+  background-size: 30rem;
+}
+
 .hero-item:hover {
   cursor: pointer;
   box-shadow: 0px 6px 3px 0px rgba(0, 0, 0, 0.1);
