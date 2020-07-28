@@ -1,14 +1,15 @@
 let images = [
-  "productImages/1.jpg",
-  "productImages/2.jpg",
-  "productImages/3.jpg",
-  "productImages/4.jpg",
-  "productImages/5.jpg",
+  'productImages/image1.jpg',
+  'productImages/image2.jpg',
+  'productImages/image3.jpg',
+  'productImages/image4.jpg',
+  'productImages/image5.jpg',
+  'productImages/image6.jpg',
 ];
 
-const prevBtn = document.getElementById("prev");
-const nextBtn = document.getElementById("next");
-const dots = document.querySelectorAll(".dot");
+const prevBtn = document.getElementById('prev');
+const nextBtn = document.getElementById('next');
+const dots = document.querySelectorAll('.dot');
 
 function checkImageExists(imageUrl, callBack) {
   var imageData = new Image();
@@ -43,8 +44,8 @@ function loadFromPath() {
       img = new Image();
       img.onload = fExists;
       img.onerror = fDoesntExist;
-      img.src = "productImages/" + i + ".jpg";
-      fileNameArray.push("productImages/" + i + ".jpg");
+      img.src = 'productImages/' + i + '.jpg';
+      fileNameArray.push('productImages/' + i + '.jpg');
     }
   }
 
@@ -99,8 +100,8 @@ function loadImages() {
       activeDotNum--;
     }
     loadImg(images[imageIndex]);
-    console.log("image_index: ", imageIndex);
-    console.log("activeDotNum: ", activeDotNum);
+    console.log('image_index: ', imageIndex);
+    console.log('activeDotNum: ', activeDotNum);
   }
 
   // Next image
@@ -120,14 +121,14 @@ function loadImages() {
     //console.log("active: ", activeDotNum);
   }
 
-  prevBtn.addEventListener("click", previmage);
-  nextBtn.addEventListener("click", nextimage);
+  prevBtn.addEventListener('click', previmage);
+  nextBtn.addEventListener('click', nextimage);
   dots.forEach((dot, idx) => {
     //   number each dot according to array index
-    dot.setAttribute("data-num", idx);
+    dot.setAttribute('data-num', idx);
 
     //   add a click event listener to each dot
-    dot.addEventListener("click", (e) => {
+    dot.addEventListener('click', (e) => {
       clickedDotNum = e.target.dataset.num;
 
       //console.log(typeof clickedDotNum); // this is string !!!!

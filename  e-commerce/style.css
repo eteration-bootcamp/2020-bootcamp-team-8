@@ -1,10 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Roboto:wght@400;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Roboto:wght@400;700&display=swap');
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 body {
@@ -25,7 +25,7 @@ body {
   align-items: center;
   height: 120px;
   color: #fff;
-  max-width: 1200px;
+  max-width: 1500px;
   margin: 0 auto;
 }
 
@@ -44,7 +44,7 @@ body {
 .left-menu-item {
   margin-right: 1rem;
   margin-left: 1rem;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 600;
 }
 
@@ -57,6 +57,10 @@ body {
 }
 
 .logo-container {
+  margin-right: 14rem;
+  margin-bottom: 2rem;
+  font-size: 50px;
+  font-weight: bold;
 }
 
 .right-menu-container {
@@ -74,7 +78,7 @@ body {
 .right-menu-item {
   margin-right: 1rem;
   margin-left: 1rem;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .right-menu-item:first-child {
@@ -94,7 +98,7 @@ body {
 
 .hero {
   height: 500px;
-  background-image: url("./images/bigpic.jpg");
+  background-image: url('./images/bigpic.jpg');
   background-attachment: fixed;
   background-size: cover;
 }
@@ -121,21 +125,21 @@ body {
 }
 
 .hero-item:first-child {
-  background-image: url("./images/shopWomen.jpg");
+  background-image: url('./images/shopWomen.jpg');
   background-attachment: scroll;
   background-repeat: no-repeat;
   background-size: 30rem;
 }
 
 .hero-item:nth-child(even) {
-  background-image: url("./images/shopMen.jpg");
+  background-image: url('./images/shopMen.jpg');
   background-attachment: scroll;
   background-repeat: no-repeat;
   background-size: 35rem;
 }
 
 .hero-item:last-child {
-  background-image: url("./images/shopKids.jpg");
+  background-image: url('./images/shopKids.jpg');
   background-attachment: scroll;
   background-repeat: no-repeat;
   background-size: 30rem;
@@ -251,7 +255,7 @@ body {
 .dropbtn {
   margin-right: 1rem;
   margin-left: 1rem;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 600;
   cursor: pointer;
   color: white;
@@ -409,3 +413,63 @@ body {
 }
 
 /*end of carousel view POYRAZ */
+
+.img-design {
+  border-radius: 8px;
+  width: 20rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.categoryBtn {
+  margin-right: 0.5rem;
+  margin-left: 0.5rem;
+  font-family: 'Montserrat', sans-serif;
+  font-size: smaller;
+  cursor: pointer;
+  color: black;
+  text-decoration: underline;
+}
+
+.dropdown:hover .categoryBtn {
+  color: #31c5b9;
+}
+.button {
+  border-radius: 4px;
+  background-color: black;
+  border: none;
+  color: #ffffff;
+  text-align: center;
+  font-size: 28px;
+  padding: 10px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
