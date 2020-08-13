@@ -24,7 +24,7 @@ const CustomGrid = () => {
           <Paper className={classes.paper}>
             <img
               width="150px"
-              src="https://upload.wikimedia.org/wikipedia/commons/a/a1/Kenyan_E-passport.jpg"
+              src="https://upload.wikimedia.org/wikipedia/commons/a/a1/Kenyan_E-passport.jpg" alt = "passport"
             />
           </Paper>
         </Grid>
