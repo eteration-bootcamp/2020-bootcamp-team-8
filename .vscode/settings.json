@@ -1,0 +1,10 @@
+{
+    "java.home": "C:\\Program Files\\AdoptOpenJDK\\java-11-openjdk-11.0.8.10-2.windows.redhat.x86_64",
+    "files.exclude": {
+        "**/.classpath": true,
+        "**/.project": true,
+        "**/.settings": true,
+        "**/.factorypath": true
+    },
+    "java.configuration.updateBuildConfiguration": "automatic"
+}   
