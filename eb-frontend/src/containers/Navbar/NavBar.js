@@ -1,10 +1,10 @@
 import React, { Component, useState } from 'react';
-import logo from './images/logo.png';
+import logo from '../../images/logo.png';
 import { Link, NavLink } from 'react-router-dom';
 
 import styles from './NavBar.module.css';
 
-import * as ROUTES from './routes';
+import * as ROUTES from '../../routes';
 
 const NavBar = () => {
   return (
