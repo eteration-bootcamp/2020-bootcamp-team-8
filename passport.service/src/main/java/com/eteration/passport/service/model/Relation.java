@@ -1,23 +1,16 @@
 package com.eteration.passport.service.model;
 
-import java.io.Serializable;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.IdClass;
 import javax.persistence.Table;
 
-
-
-
-
 @Entity
 @Table(name = "Relation")
 @IdClass(RelationId.class)
 public class Relation {
-    
-    
+        
     @Id
     @Column(name="departureCountryCode")
     private String countryOfOrigin;
@@ -28,6 +21,10 @@ public class Relation {
     
     @Column
     private String visaCode;
+
+    public Relation(){
+        
+    }
 
     public Relation(String countryOfOrigin, String countryOfDestination, String visaCode) {
         this.countryOfOrigin = countryOfOrigin;
@@ -58,6 +55,5 @@ public class Relation {
     public void setVisaCode(String visaCode) {
         this.visaCode = visaCode;
     }
-
-    
+   
 }

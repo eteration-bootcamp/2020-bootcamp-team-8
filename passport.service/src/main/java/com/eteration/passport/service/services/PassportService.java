@@ -5,7 +5,9 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 
 import com.eteration.passport.service.model.Passport;
-import com.eteration.passport.service.model.PassportRepository;
+import com.eteration.passport.service.repositories.PassportRepository;
+
+import org.json.simple.*;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -24,12 +26,17 @@ public class PassportService {
     PassportRepository passportRepository;
 
     @RequestMapping(method = RequestMethod.GET)
-    public ResponseEntity<List<Passport>> getAllPassports(HttpServletRequest request){
+    public ResponseEntity<String> getAllPassports(HttpServletRequest request){
         String code = request.getParameter("code");
         if(code !=null){
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
         }
-        return ResponseEntity.status(HttpStatus.OK).body(passportRepository.findAll());
+        else{
+            List<Passport> passports = passportRepository.findAllPassports();
+            String jsonString = JSONArray.toJSONString(passports);
+            return ResponseEntity.status(HttpStatus.OK).body(jsonString);
+        }
+        
     }
     
 }

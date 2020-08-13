@@ -30,7 +30,7 @@ CREATE TABLE `Passport` (
   `imageName` varchar(10) DEFAULT NULL,
   `continent` varchar(20) DEFAULT NULL,
   `visaFree` int(11) DEFAULT NULL,
-  `visaRequried` int(11) DEFAULT NULL,
+  `visaRequired` int(11) DEFAULT NULL,
   `visaOnArrival` int(11) DEFAULT NULL,
   `ETA` int(11) DEFAULT NULL,
   PRIMARY KEY (`countryCode`),

@@ -1,11 +1,17 @@
-package com.eteration.passport.service.model;
+package com.eteration.passport.service.repositories;
 
 import java.util.List;
 
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
+import com.eteration.passport.service.model.Relation;
+import com.eteration.passport.service.model.RelationId;
 
-public interface RelationRepository extends JpaRepository<Relation,Long>{
+
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.CrudRepository;
+
+
+
+public interface RelationRepository extends CrudRepository<Relation,RelationId>{
 
     @Query(value = "SELECT * FROM Relation" , nativeQuery = true)
     List<Relation> findAllRelations();

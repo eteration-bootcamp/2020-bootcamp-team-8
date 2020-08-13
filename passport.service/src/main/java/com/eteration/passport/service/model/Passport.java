@@ -8,21 +8,26 @@ import javax.persistence.*;
 @Table(name = "Passport")
 public class Passport{
     @Id
+    @Column(name = "countryCode")
     private String countryCode;
-    @Column
+    @Column(name = "countryName")
     private String countryName;
-    @Column
+    @Column(name = "imageName")
     private String imageName;
-    @Column
+    @Column(name = "continent")
     private String continent;
-    @Column
+    @Column(name = "visaFree")
     private int visaFree;
-    @Column
+    @Column(name = "visaRequired")
     private int visaRequired;
-    @Column
+    @Column(name = "visaOnArrival")
     private int visaOnArrival;
     @Column(name = "ETA")
     private int eta;
+
+    public Passport(){
+
+    }
 
     public Passport(String countryName, String countryCode, String imageName, String continent, int visaFree,
             int visaRequired, int visaOnArrival, int eta) {
@@ -100,6 +105,14 @@ public class Passport{
         this.eta = eta;
     }
 
+	@Override
+	public String toString() {
+		return "{continent:" + continent + ", countryCode:" + countryCode + ", countryName:" + countryName
+				+ ", eta:" + eta + ", imageName:" + imageName + ", visaFree:" + visaFree + ", visaOnArrival:"
+				+ visaOnArrival + ", visaRequired:" + visaRequired + "}";
+	}
+
+    
     
 
     
