@@ -2,7 +2,7 @@ import React from 'react';
 import logo from './images/logo.png';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './App.css';
-import NavBar from './NavBar';
+import NavBar from './containers/Navbar/NavBar';
 import Explore from './components/Explore/Explore';
 import Compare from './components/Compare';
 import Discover from './components/Discover/Discover';

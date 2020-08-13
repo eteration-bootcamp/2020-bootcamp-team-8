@@ -1,9 +1,9 @@
 import React from 'react';
-
+import CustomGrid from '../../containers/CustomGrid/CustomGrid';
 import styles from './Explore.module.css';
 
 const Explore = () => {
-  return <h1 className={styles.container}>Explore</h1>;
+  return <CustomGrid />;
 };
 
 export default Explore;
