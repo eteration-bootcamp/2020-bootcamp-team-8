@@ -20,14 +20,53 @@ const CustomGrid = () => {
   const FormRow = () => {
     return (
       <React.Fragment>
-        <Grid item xs={4}>
-          <Paper className={classes.paper}>item</Paper>
+        <Grid item xs={50}>
+          <Paper className={classes.paper}>
+            <img
+              width="150px"
+              src="https://upload.wikimedia.org/wikipedia/commons/a/a1/Kenyan_E-passport.jpg"
+            />
+          </Paper>
         </Grid>
-        <Grid item xs={4}>
-          <Paper className={classes.paper}>item</Paper>
+        <Grid item xs={50}>
+          <Paper className={classes.paper}>
+            <img
+              width="150px"
+              src="https://upload.wikimedia.org/wikipedia/commons/a/a1/Kenyan_E-passport.jpg"
+            />
+          </Paper>
         </Grid>
-        <Grid item xs={4}>
-          <Paper className={classes.paper}>item</Paper>
+        <Grid item xs={50}>
+          <Paper className={classes.paper}>
+            <img
+              width="150px"
+              src="https://upload.wikimedia.org/wikipedia/commons/a/a1/Kenyan_E-passport.jpg"
+            />
+          </Paper>
+        </Grid>
+        <Grid item xs={50}>
+          <Paper className={classes.paper}>
+            <img
+              width="150px"
+              src="https://upload.wikimedia.org/wikipedia/commons/a/a1/Kenyan_E-passport.jpg"
+            />
+          </Paper>
+        </Grid>
+        <Grid item xs={50}>
+          <Paper className={classes.paper}>
+            <img
+              width="150px"
+              src="https://upload.wikimedia.org/wikipedia/commons/a/a1/Kenyan_E-passport.jpg"
+            />
+          </Paper>
+        </Grid>
+        <Grid item xs={50}>
+          <Paper className={classes.paper}>
+            <img
+              width="150px"
+              src="https://upload.wikimedia.org/wikipedia/commons/a/a1/Kenyan_E-passport.jpg"
+            />
+          </Paper>
         </Grid>
       </React.Fragment>
     );
