@@ -7,7 +7,7 @@ import javax.persistence.IdClass;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "Relation")
+@Table(name = "Relations")
 @IdClass(RelationId.class)
 public class Relation {
         
@@ -23,10 +23,11 @@ public class Relation {
     private String visaCode;
 
     public Relation(){
-        
+        super();
     }
 
     public Relation(String countryOfOrigin, String countryOfDestination, String visaCode) {
+        super();
         this.countryOfOrigin = countryOfOrigin;
         this.countryOfDestination = countryOfDestination;
         this.visaCode = visaCode;
@@ -55,5 +56,12 @@ public class Relation {
     public void setVisaCode(String visaCode) {
         this.visaCode = visaCode;
     }
+
+	@Override
+	public String toString() {
+		return "{\"countryOfDestination\":\"" + countryOfDestination + "\", \"countryOfOrigin\":\"" + countryOfOrigin
+				+ "\", \"visaCode\":\"" + visaCode + "\"}";
+	}
+
    
 }

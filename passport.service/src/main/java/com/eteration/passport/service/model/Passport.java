@@ -26,11 +26,12 @@ public class Passport{
     private int eta;
 
     public Passport(){
-
+        super();
     }
 
     public Passport(String countryName, String countryCode, String imageName, String continent, int visaFree,
             int visaRequired, int visaOnArrival, int eta) {
+        super();
         this.countryName = countryName;
         this.countryCode = countryCode;
         this.imageName = imageName;
@@ -107,15 +108,9 @@ public class Passport{
 
 	@Override
 	public String toString() {
-		return "{continent:" + continent + ", countryCode:" + countryCode + ", countryName:" + countryName
-				+ ", eta:" + eta + ", imageName:" + imageName + ", visaFree:" + visaFree + ", visaOnArrival:"
-				+ visaOnArrival + ", visaRequired:" + visaRequired + "}";
+		return "{\"continent\":\"" + continent + "\", \"countryCode\":\"" + countryCode + "\", \"countryName\":\"" + countryName
+				+ "\", \"eta\":" + eta + ", \"imageName\":\"" + imageName + "\", \"visaFree\":" + visaFree + ", \"visaOnArrival\":"
+				+ visaOnArrival + ", \"visaRequired\":" + visaRequired + "}";
 	}
-
-    
-    
-
-    
-    
 
 }
