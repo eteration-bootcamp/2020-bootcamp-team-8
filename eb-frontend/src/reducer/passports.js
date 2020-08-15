@@ -3,7 +3,9 @@ import {LOAD_PASSPORTS,LOAD_PASSPORTS_ERROR,LOAD_PASSPORTS_SUCCESS, LOAD_RELATIO
 
 
 const initialState = fromJS({
-    passportList : []
+    passportList : [],
+    relationList : []
+
 });
 
 function passportReducer(state=initialState,action){

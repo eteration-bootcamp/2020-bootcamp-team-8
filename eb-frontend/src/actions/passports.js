@@ -35,10 +35,11 @@ export function loadRelations(){
     }
 }
 
-export function loadRelationsSuccess(relationList){
+export function loadRelationsSuccess(relationList,countryCode){
     return{
         type: LOAD_RELATIONS_SUCCESS,
-        relationList
+        relationList,
+        countryCode
     }
 }
 
