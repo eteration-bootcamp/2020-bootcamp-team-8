@@ -6,8 +6,6 @@ import 'bootstrap/dist/css/bootstrap.css';
 import Selector from './Selector';
 import TableHeaderBox from './TableHeaderBox';
 
-
-
 export default class CompareTable extends React.Component{
     render(){
         const {data} = this.props;
@@ -35,8 +33,8 @@ export default class CompareTable extends React.Component{
                  {data.map((passport,key) => {
                      return(
                         <tr>
-                        <td>    
-                            <img src={"../../../images/png_128/"+passport.countryName.toLowerCase()+".png"} alt="flag">
+                        <td>
+                            <img src={require('./../../../images/png_128/'+passport.countryName.toLowerCase()+'.png')} alt="flag">
                             </img>
                             <div>{passport.countryName}</div>
                         </td>
@@ -51,6 +49,8 @@ export default class CompareTable extends React.Component{
                     
                 </tbody>
                 </Table>
+                
+
         )
     }
 }
