@@ -6,12 +6,12 @@ export default class Selector extends React.Component{
     
     constructor(props){
         super(props);
-        this.state={selectorValue:null};
+        this.state={selectorValue:null,id:null};
         this.handleChange.bind(this);
     }
-    async handleChange(e){
-        await this.setState({selectorValue: e});
-        await this.props.selectorCallBack(this.state.selectorValue);
+    async handleChange(e,id){
+        await this.setState({selectorValue:e,id:id});
+        await this.props.selectorCallBack(this.state.selectorValue,this.state.id);
     }
     render(){
         
@@ -19,9 +19,9 @@ export default class Selector extends React.Component{
         
         return(
             <th>
-            <Form.Group controlId="selector1" >
+            <Form.Group controlId={this.props.controlId} >
                 <Form.Label>{this.props.title}</Form.Label>
-                <Form.Control as="select" value={this.state.selectorValue} onChange={ event => this.handleChange(event.target.value)} >
+                <Form.Control as="select" value={this.state.selectorValue} onChange={ event => this.handleChange(event.target.value,event.target.id)} >
                     <option  value = "">Select Passport</option>
                     {data.map((passport,key) =>{
                         return(

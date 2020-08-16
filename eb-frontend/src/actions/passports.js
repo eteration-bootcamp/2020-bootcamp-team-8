@@ -29,17 +29,17 @@ export function loadPassportsError(error){
     }
 }
 
-export function loadRelations(){
+export function loadRelations(countryCode){
     return{
-        type: LOAD_RELATIONS
+        type: LOAD_RELATIONS,
+        countryCode
     }
 }
 
-export function loadRelationsSuccess(relationList,countryCode){
+export function loadRelationsSuccess(relationList){
     return{
         type: LOAD_RELATIONS_SUCCESS,
-        relationList,
-        countryCode
+        relationList
     }
 }
 

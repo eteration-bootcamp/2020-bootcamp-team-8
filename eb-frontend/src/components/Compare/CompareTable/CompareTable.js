@@ -9,70 +9,153 @@ export default class CompareTable extends React.Component{
 
     constructor(props){
         super(props);
-        this.state ={ selectorValue: null};
+        this.state ={ 
+        selectorValue: null, selectorId:null,
+        boxInfo0: {score:"Mobility Score",countryName:"N/A",imageName:"image"},
+        boxInfo1: {score:"Mobility Score",countryName:"N/A",imageName:"image"},
+        boxInfo2: {score:"Mobility Score",countryName:"N/A",imageName:"image"},
+        boxInfo3: {score:"Mobility Score",countryName:"N/A",imageName:"image"},
+        visas0: [],
+        visas1: [],
+        visas2: [],
+        visas3: []
+        
+        };
         this.selectorCallBack.bind(this);
+        this.handleRelationList.bind(this);
+
     };
 
-    selectorCallBack = (selectorVal) => {
-        this.setState({selectorValue:selectorVal});
-        //this.props.onChange(this.state.selectorValue);
+    async handleRelationList(relations){
+       await this.setState({visas0:relations});
     }
 
-    render(){
-        const {data,relations} = this.props;
-        const loadRelations = this.props.onChange;
-        let score = "Mobility Score",countryName="N/A",imageName="image";
-        let relation = null;
-        console.log(this.state.selectorValue);
-        if(this.state.selectorValue !== null){
-           let selectedPassport = data.find((passport)=>{return passport.countryCode===this.state.selectorValue});
-           console.log(selectedPassport);
-           score=selectedPassport.visaFree+selectedPassport.eta + selectedPassport.visaOnArrival;
-           countryName=selectedPassport.countryName;
-           imageName=selectedPassport.imageName;
-           loadRelations(this.state.selectorValue.toLowerCase());
-        }
+    selectorCallBack = (selectorVal,id) =>{
+    
+        let selectedPassport = this.props.data.find((passport)=>{return passport.countryCode===selectorVal});
         
+        this.setState({
+            selectorValue:selectorVal,
+            selectorId:id,
+        });
+        
+        this.props.loadRelations(this.state.selectorValue.toLowerCase());
+
+       
+
+        if(this.state.selectorId==="Selector0"){
+            let boxInfo0 = this.state.boxInfo0;
+            boxInfo0.score=selectedPassport.visaFree+selectedPassport.eta + selectedPassport.visaOnArrival;
+            boxInfo0.countryName=selectedPassport.countryName;
+            boxInfo0.imageName=selectedPassport.imageName;
+            
+            this.setState({
+                boxInfo0: boxInfo0,
+                visas0: this.props.relationList
+            });
+    
+        }
+        else if(this.state.selectorId==="Selector1" ){
+            let boxInfo1 = this.state.boxInfo1;
+            boxInfo1.score=selectedPassport.visaFree+selectedPassport.eta + selectedPassport.visaOnArrival;
+            boxInfo1.countryName=selectedPassport.countryName;
+            boxInfo1.imageName=selectedPassport.imageName;
+            this.setState({
+                boxInfo1: boxInfo1,
+                visas1:this.props.relationList
+            });
+            
+        }
+        else if(this.state.selectorId==="Selector2"){
+            let boxInfo2= this.state.boxInfo2;
+            boxInfo2.score=selectedPassport.visaFree+selectedPassport.eta + selectedPassport.visaOnArrival;
+            boxInfo2.countryName=selectedPassport.countryName;
+            boxInfo2.imageName=selectedPassport.imageName;
+            this.setState({
+                boxInfo2:boxInfo2,
+                visas2:this.props.relationList
+            });
+        }else if(this.state.selectorId==="Selector3"){
+            let boxInfo3 = this.state.boxInfo3;
+            boxInfo3.score=selectedPassport.visaFree+selectedPassport.eta + selectedPassport.visaOnArrival;
+            boxInfo3.countryName=selectedPassport.countryName;
+            boxInfo3.imageName=selectedPassport.imageName;
+            
+            this.setState({
+                boxInfo3: boxInfo3,
+                visas3:this.props.relationList
+            });
+        }  
+        
+    }
+
+    
+
+
+    render(){
+        const {data} = this.props;
+        let boxInfo0 = this.state.boxInfo0;
+        let boxInfo1 = this.state.boxInfo1;
+        let boxInfo2 = this.state.boxInfo2;
+        let boxInfo3 = this.state.boxInfo3;
         
         return(
-            <Table striped bordered hover variant="ligth">
+            <Table striped bordered hover responsive variant="ligth" size ="sm">
                 <thead>
                 <tr>
                     <th class="empty"></th>
-                    <Selector data = {data} selectorCallBack={this.selectorCallBack} title ={"Select Passport:"} />
-                    <Selector data = {data} title ={"Compare To:"}/>
-                    <Selector data = {data} title ={"Compare To:"}/>
-                    <Selector data = {data} title ={"Compare To:"}/>                      
+                    <Selector data = {data} selectorCallBack={this.selectorCallBack} title ={"Select Passport:"} controlId = {"Selector0"} />
+                    <Selector data = {data} title ={"Compare To:"} selectorCallBack={this.selectorCallBack} controlId = {"Selector1"}  />
+                    <Selector data = {data} title ={"Compare To:"} selectorCallBack={this.selectorCallBack} controlId = {"Selector2"} />
+                    <Selector data = {data} title ={"Compare To:"} selectorCallBack={this.selectorCallBack} controlId = {"Selector3"} />                      
                 </tr>
                 </thead>
                 <thead>
                     <tr>
                         <th></th>
-                        <TableHeaderBox imageName={imageName} countryName={countryName} score={score}/>
-                        <TableHeaderBox/>
-                        <TableHeaderBox/>
-                        <TableHeaderBox/>
+                        <TableHeaderBox imageName={boxInfo0.imageName} countryName={boxInfo0.countryName} score={boxInfo0.score}/>
+                        <TableHeaderBox imageName={boxInfo1.imageName} countryName={boxInfo1.countryName} score={boxInfo1.score}/>
+                        <TableHeaderBox imageName={boxInfo2.imageName} countryName={boxInfo2.countryName} score={boxInfo2.score}/>
+                        <TableHeaderBox imageName={boxInfo3.imageName} countryName={boxInfo3.countryName} score={boxInfo3.score}/>
+
                     </tr>
                 </thead>
                 <tbody>
                  {data.map((passport,key) => {
-                    let visaCode = "";
-                    if(relation != undefined){
-                        relation = relations.find((rel) => {return rel.counrtyOfDestination === passport.countryCode});
-                        console.log(relation);
-                        visaCode=relation.visaCode; 
+                    let visa0 = "";
+                    let visa1 = "";
+                    let visa2 = "";
+                    let visa3 = "";
+                    let relation = null;
+                    if(this.state.visas0.length !==0){
+                        relation = this.state.visas0.find((rel) => {return rel.countryOfDestination === passport.countryCode});
+                        if(relation !== undefined){
+                            visa0 = relation.visaCode;
+                        }
+                    }else if(this.state.visas1.length !==0){
+                        relation = this.state.visas1.find((rel) => {return rel.countryOfDestination === passport.countryCode});
+                        if(relation !== undefined){
+                            visa1 = relation.visaCode;
+                        }
+                    }else if(this.state.visas2.length !==0){
+                        relation = this.state.visas2.find((rel) => {return rel.countryOfDestination === passport.countryCode});
+                        if(relation !== undefined){
+                            visa2 = relation.visaCode;
+                        }
                     }
                     return(
                         <tr>
                         <td>
-                            <img src={require('./../../../images/png_128/'+passport.countryName.toLowerCase()+'.png')} alt="flag">
-                            </img>
-                            <div>{passport.countryName}</div>
+                            <img src={require('./../../../images/png_128/'+passport.countryName.toLowerCase()+'.png')} 
+                            width="50px" height ="40px" alt="flag"
+                            
+                            ></img>
+                            <div style={{float: "right"}}>{passport.countryName}</div>
                         </td>
-                        <td>{visaCode}</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td>{visa0}</td>
+                        <td>{visa1}</td>
+                        <td>{visa2}</td>
+                        <td>{visa3}</td>
                         </tr>
                         
                     )})

@@ -10,11 +10,14 @@ export class Compare extends React.Component{
 
   constructor(props){
     super(props);
-    this.onChange = this.onChange.bind(this);
+    this.loadRelations = this.loadRelations.bind(this);
   }
 
-  onChange(countryCode){
-    this.props.loadRelations(countryCode);
+  async loadRelations(countryCode){
+    
+      await this.props.loadRelations(countryCode);
+    
+    
   }
   componentDidMount(){
     if(this.props.passport.passportList.length === 0){
@@ -26,6 +29,8 @@ export class Compare extends React.Component{
 
     return(
       <>
+      <h1 className={styles.container}>Compare Your Passport</h1>
+      <CompareTable data={this.props.passport.passportList} relationList = {this.props.passport.relationList}  loadRelations = {this.loadRelations}/>
       <div className={styles.header2}>
         <h1 className={styles.header2}>Compare Your Passport</h1>
         <h5 className={styles.header2}>Select passports and compare them side by side.</h5>
@@ -49,8 +54,8 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => {
 	return {
-		loadPassports: (passportList) => {
-      dispatch(loadPassports(passportList))
+		loadPassports: (countryCode) => {
+      dispatch(loadPassports(countryCode))
     },
     loadRelations: (relationList) =>{
       dispatch(loadRelations(relationList))
