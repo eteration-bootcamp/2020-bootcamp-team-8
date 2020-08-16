@@ -26,64 +26,57 @@ export default class CompareTable extends React.Component{
     };
 
 
-
+    
     selectorCallBack = (selectorVal,id) =>{
     
         let selectedPassport = this.props.data.find((passport)=>{return passport.countryCode===selectorVal});
         
-        this.setState({
-            selectorValue:selectorVal,
-            selectorId:id,
-        });
-        
-        this.props.loadRelations(this.state.selectorValue.toLowerCase());
-
-       
-
-        if(this.state.selectorId==="Selector0"){
-            let boxInfo0 = this.state.boxInfo0;
+        if(id==="Selector0"){
+            let boxInfo0 = {score:null,countryName:null,imageName:null};
             boxInfo0.score=selectedPassport.visaFree+selectedPassport.eta + selectedPassport.visaOnArrival;
             boxInfo0.countryName=selectedPassport.countryName;
             boxInfo0.imageName=selectedPassport.imageName;
-            
             this.setState({
-                boxInfo0: boxInfo0,
-                visas0: this.props.relationList
-            });
+                visas0:this.props.relationList,
+                boxInfo0: boxInfo0
+
+            })
     
         }
-        else if(this.state.selectorId==="Selector1" ){
-            let boxInfo1 = this.state.boxInfo1;
+        else if(id==="Selector1" ){
+            let boxInfo1 = {score:null,countryName:null,imageName:null};
             boxInfo1.score=selectedPassport.visaFree+selectedPassport.eta + selectedPassport.visaOnArrival;
             boxInfo1.countryName=selectedPassport.countryName;
             boxInfo1.imageName=selectedPassport.imageName;
             this.setState({
-                boxInfo1: boxInfo1,
-                visas1:this.props.relationList
-            });
-            
+                visas1:this.props.relationList,
+                boxInfo1:boxInfo1
+
+            })
         }
-        else if(this.state.selectorId==="Selector2"){
-            let boxInfo2= this.state.boxInfo2;
+        else if(id==="Selector2"){
+            let boxInfo2= {score:null,countryName:null,imageName:null};
             boxInfo2.score=selectedPassport.visaFree+selectedPassport.eta + selectedPassport.visaOnArrival;
             boxInfo2.countryName=selectedPassport.countryName;
             boxInfo2.imageName=selectedPassport.imageName;
             this.setState({
-                boxInfo2:boxInfo2,
-                visas2:this.props.relationList
-            });
-        }else if(this.state.selectorId==="Selector3"){
-            let boxInfo3 = this.state.boxInfo3;
+                visas2:this.props.relationList,
+                boxInfo2:boxInfo2
+
+            })
+        }else if(id==="Selector3"){
+            let boxInfo3 = {score:null,countryName:null,imageName:null};
             boxInfo3.score=selectedPassport.visaFree+selectedPassport.eta + selectedPassport.visaOnArrival;
             boxInfo3.countryName=selectedPassport.countryName;
             boxInfo3.imageName=selectedPassport.imageName;
-            
             this.setState({
-                boxInfo3: boxInfo3,
-                visas3:this.props.relationList
-            });
+                visas3:this.props.relationList,
+                boxInfo3:boxInfo3
+            })
+
         }  
-        
+                    
+
     }
 
     
@@ -101,10 +94,10 @@ export default class CompareTable extends React.Component{
                 <thead>
                 <tr>
                     <th class="empty"></th>
-                    <Selector data = {data} selectorCallBack={this.selectorCallBack} title ={"Select Passport:"} controlId = {"Selector0"} />
-                    <Selector data = {data} title ={"Compare To:"} selectorCallBack={this.selectorCallBack} controlId = {"Selector1"}  />
-                    <Selector data = {data} title ={"Compare To:"} selectorCallBack={this.selectorCallBack} controlId = {"Selector2"} />
-                    <Selector data = {data} title ={"Compare To:"} selectorCallBack={this.selectorCallBack} controlId = {"Selector3"} />                      
+                    <Selector data = {data} selectorCallBack={this.selectorCallBack} title ={"Select Passport:"} controlId = {"Selector0"} loadRelations={this.props.loadRelations} />
+                    <Selector data = {data} title ={"Compare To:"} selectorCallBack={this.selectorCallBack} controlId = {"Selector1"} loadRelations={this.props.loadRelations}  />
+                    <Selector data = {data} title ={"Compare To:"} selectorCallBack={this.selectorCallBack} controlId = {"Selector2"} loadRelations={this.props.loadRelations}/>
+                    <Selector data = {data} title ={"Compare To:"} selectorCallBack={this.selectorCallBack} controlId = {"Selector3"} loadRelations={this.props.loadRelations}/>                      
                 </tr>
                 </thead>
                 <thead>
@@ -129,18 +122,21 @@ export default class CompareTable extends React.Component{
                         if(relation !== undefined){
                             visa0 = relation.visaCode;
                         }
-                    }else if(this.state.visas1.length !==0){
+                    }
+                    if(this.state.visas1.length !==0){
                         relation = this.state.visas1.find((rel) => {return rel.countryOfDestination === passport.countryCode});
                         if(relation !== undefined){
                             visa1 = relation.visaCode;
                         }
-                    }else if(this.state.visas2.length !==0){
+                    }
+                    if(this.state.visas2.length !==0){
                         relation = this.state.visas2.find((rel) => {return rel.countryOfDestination === passport.countryCode});
                         if(relation !== undefined){
                             visa2 = relation.visaCode;
                         }
                     }
-                    else if(this.state.visas3.length !==0){
+                    
+                    if(this.state.visas3.length !==0){
                         relation = this.state.visas3.find((rel) => {return rel.countryOfDestination === passport.countryCode});
                         if(relation !== undefined){
                             visa3 = relation.visaCode;
