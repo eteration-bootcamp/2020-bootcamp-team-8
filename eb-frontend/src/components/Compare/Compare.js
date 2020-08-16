@@ -31,6 +31,11 @@ export class Compare extends React.Component{
       <>
       <h1 className={styles.container}>Compare Your Passport</h1>
       <CompareTable data={this.props.passport.passportList} relationList = {this.props.passport.relationList}  loadRelations = {this.loadRelations}/>
+      <div className={styles.header2}>
+        <h1 className={styles.header2}>Compare Your Passport</h1>
+        <h5 className={styles.header2}>Select passports and compare them side by side.</h5>
+        <CompareTable data={this.props.passport.passportList} relationList = {this.props.passport.relationList}  onChange = {this.onChange}/>
+      </div>
       </>
     ) 
   }
