@@ -14,7 +14,7 @@ export class Compare extends React.Component{
   }
 
   onChange(countryCode){
-    this.props.loadPassports(countryCode);
+    this.props.loadRelations(countryCode);
   }
   componentDidMount(){
     if(this.props.passport.passportList.length === 0){
@@ -27,9 +27,9 @@ export class Compare extends React.Component{
     return(
       <>
       <div className={styles.header2}>
-        <h1 className={styles.header2}>Compare</h1>
+        <h1 className={styles.header2}>Compare Your Passport</h1>
         <h5 className={styles.header2}>Select passports and compare them side by side.</h5>
-        <CompareTable data={this.props.passport.passportList}/>
+        <CompareTable data={this.props.passport.passportList} relationList = {this.props.passport.relationList}  onChange = {this.onChange}/>
       </div>
       </>
     ) 
@@ -42,15 +42,19 @@ const getPassports = createSelector(
     (passportReducer) => passportReducer.toJS()
 )
 
+
 const mapStateToProps = (state) => ({
-    passport: getPassports(state)
+    passport: getPassports(state),
 })
 
 const mapDispatchToProps = (dispatch) => {
 	return {
 		loadPassports: (passportList) => {
-			dispatch(loadPassports(passportList))
-		}
+      dispatch(loadPassports(passportList))
+    },
+    loadRelations: (relationList) =>{
+      dispatch(loadRelations(relationList))
+    }
 
 	}
 }
