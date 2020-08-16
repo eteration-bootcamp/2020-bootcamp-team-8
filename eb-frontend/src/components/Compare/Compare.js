@@ -26,8 +26,11 @@ export class Compare extends React.Component{
 
     return(
       <>
-      <h1 className={styles.container}>Compare</h1>
-      <CompareTable data={this.props.passport.passportList}/>
+      <div className={styles.header2}>
+        <h1 className={styles.header2}>Compare</h1>
+        <h5 className={styles.header2}>Select passports and compare them side by side.</h5>
+        <CompareTable data={this.props.passport.passportList}/>
+      </div>
       </>
     ) 
   }
