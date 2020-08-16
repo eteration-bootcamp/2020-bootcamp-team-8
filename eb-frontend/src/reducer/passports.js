@@ -29,6 +29,7 @@ function passportReducer(state=initialState,action){
         case LOAD_RELATIONS:
             return state.merge({
                 loading:true,
+                countryCode: action.countryCode,
                 error: undefined
             });
         case LOAD_RELATIONS_ERROR:
