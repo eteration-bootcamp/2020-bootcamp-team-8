@@ -62,7 +62,6 @@ export default class CompareTable extends React.Component{
                         console.log(relation);
                         visaCode=relation.visaCode; 
                     }
-
                     return(
                         <tr>
                         <td>
