@@ -22,13 +22,10 @@ export default class CompareTable extends React.Component{
         
         };
         this.selectorCallBack.bind(this);
-        this.handleRelationList.bind(this);
 
     };
 
-    async handleRelationList(relations){
-       await this.setState({visas0:relations});
-    }
+
 
     selectorCallBack = (selectorVal,id) =>{
     
