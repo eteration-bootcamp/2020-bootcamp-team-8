@@ -10,7 +10,6 @@ export default class CompareTable extends React.Component{
     constructor(props){
         super(props);
         this.state ={ 
-        selectorValue: null, selectorId:null,
         boxInfo0: {score:"Mobility Score",countryName:"N/A",imageName:"image"},
         boxInfo1: {score:"Mobility Score",countryName:"N/A",imageName:"image"},
         boxInfo2: {score:"Mobility Score",countryName:"N/A",imageName:"image"},
@@ -26,10 +25,10 @@ export default class CompareTable extends React.Component{
 
 
     
-    selectorCallBack = (selectorVal,id) =>{
+    selectorCallBack =(selectorVal,id) =>{
     
         let selectedPassport = this.props.data.find((passport)=>{return passport.countryCode===selectorVal});
-
+        
         
         if(id==="Selector0"){
             let boxInfo0 = {score:null,countryName:null,imageName:null};
@@ -99,7 +98,7 @@ export default class CompareTable extends React.Component{
                 <thead>
                 <tr>
                     <th class="empty"></th>
-                    <Selector data = {data} selectorCallBack={this.selectorCallBack} title ={"Select Passport:"} controlId = {"Selector0"} loadRelations={this.props.loadRelations} />
+                    <Selector data = {data} relations= {this.props.relationList} selectorCallBack={this.selectorCallBack} title ={"Select Passport:"} controlId = {"Selector0"} loadRelations={this.props.loadRelations} />
                     <Selector data = {data} title ={"Compare To:"} selectorCallBack={this.selectorCallBack} controlId = {"Selector1"} loadRelations={this.props.loadRelations}  />
                     <Selector data = {data} title ={"Compare To:"} selectorCallBack={this.selectorCallBack} controlId = {"Selector2"} loadRelations={this.props.loadRelations}/>
                     <Selector data = {data} title ={"Compare To:"} selectorCallBack={this.selectorCallBack} controlId = {"Selector3"} loadRelations={this.props.loadRelations}/>                      
@@ -116,7 +115,7 @@ export default class CompareTable extends React.Component{
                     </tr>
                 </thead>
                 <tbody>
-                 {data.map((passport,key) => {
+                {data.map((passport,key) => {
                     let visa0 = "";
                     let visa1 = "";
                     let visa2 = "";

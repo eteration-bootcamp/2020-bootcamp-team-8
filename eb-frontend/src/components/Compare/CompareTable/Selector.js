@@ -9,12 +9,14 @@ export default class Selector extends React.Component{
         super(props);
         this.handleChange.bind(this);
     }
-    handleChange = (e,id)=>{
+    async handleChange(e,id){
+
+        await this.props.loadRelations(e.toLowerCase());
+        await(this.props.relations);
         this.props.selectorCallBack(e,id);
-        this.props.loadRelations(e.toLowerCase());
-        
     }
     render(){
+        
         
         const data = this.props.data;
         
