@@ -28,7 +28,7 @@ export default class CompareTable extends React.Component{
     
 
     handletableFilling =(selectorVal,id) =>{
-
+        if(selectorVal !== ""){
         let selectedPassport = this.props.data.find((passport)=>{return passport.countryCode===selectorVal});
         
         
@@ -81,12 +81,23 @@ export default class CompareTable extends React.Component{
             })
 
         }
+    }else{
+        let boxInfo = {score:"Mobility Score",countryName:"N/A",imageName:"image"};
+        if(id==="Selector0")
+            this.setState({visas0:[],boxInfo0:boxInfo});
+        else if(id==="Selector1")
+            this.setState({visas1:[],boxInfo1:boxInfo});
+        else if(id==="Selector2")
+            this.setState({visas2:[],boxInfo2:boxInfo});
+        else
+            this.setState({visas3:[],boxInfo3:boxInfo});
+    }
         clearInterval(this.timer);  
     }
     
     selectorCallBack =(selectorVal,id) =>{
         
-        this.timer = setTimeout(() => this.handletableFilling(selectorVal,id),200)
+        this.timer = setTimeout(() => this.handletableFilling(selectorVal,id),100)
     }
 
     
