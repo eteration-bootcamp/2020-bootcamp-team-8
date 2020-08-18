@@ -6,7 +6,7 @@ export default class TableHeaderBox extends React.Component{
         if(countryName !=="N/A"){
             imageName= <img src={require('./../../../images/passport_images/'+imageName)}
             alt={"passport image of "+ countryName}
-            style={{width: "50px", height: "60px", float: "left"}}
+            style={{width: "50px", height: "80px", float: "left"}}
             />
         }
         return(

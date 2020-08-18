@@ -21,12 +21,9 @@ export default class CompareTable extends React.Component{
         visas3: []
         };
         this.selectorCallBack.bind(this);
-<<<<<<< HEAD
-=======
         this.handletableFilling.bind(this);
         this.timer=null;
 
->>>>>>> b1db1d3f6b7bf3a96d54a73e0dd8171ddd63afa3
     };
 
     
