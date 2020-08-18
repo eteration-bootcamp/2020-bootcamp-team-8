@@ -7,6 +7,8 @@ import { Button, Modal } from '@material-ui/core';
 import { AccessAlarm, ThreeDRotation } from '@material-ui/icons';
 import _ from 'lodash';
 import { PASSPORTS, CONTINENTS } from '../../constants';
+import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
+import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -90,21 +92,23 @@ const CustomGrid = () => {
         <div>
           <div className={styles.modalBackground} />
           {selectedPassport.index !== 0 && (
-            <button className={styles.prevBtn} onClick={goToPreviousPassport}>
-              Prev
-            </button>
+            <ArrowBackIosIcon
+              className={styles.prevBtn}
+              onClick={goToPreviousPassport}
+            />
           )}
           <div className={styles.modalContent}>
             <img
-              width="180px"
+              width="350px"
               src={selectedPassport.image}
               alt={selectedPassport.text}
             />
           </div>
           {selectedPassport.index !== lastIndex && (
-            <button className={styles.nextBtn} onClick={goToNextPassport}>
-              Next
-            </button>
+            <ArrowForwardIosIcon
+              className={styles.nextBtn}
+              onClick={goToNextPassport}
+            />
           )}
         </div>
       </Modal>
