@@ -1,5 +1,6 @@
 import React from 'react';
 import Form from 'react-bootstrap/Form';
+import { LOAD_RELATIONS } from '../../../actions/actionTypes';
 
 
 
@@ -9,9 +10,10 @@ export default class Selector extends React.Component{
         super(props);
         this.handleChange.bind(this);
     }
-    handleChange = (e,id)=>{
+    async handleChange(e,id){
+        await this.props.loadRelations(e.toLowerCase());
+        //if(this.props.relation.length !== 0){
         this.props.selectorCallBack(e,id);
-        this.props.loadRelations(e.toLowerCase());
         
     }
     render(){

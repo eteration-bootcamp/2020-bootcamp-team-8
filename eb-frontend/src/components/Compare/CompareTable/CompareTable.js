@@ -27,6 +27,7 @@ export default class CompareTable extends React.Component{
 
     
     selectorCallBack = (selectorVal,id) =>{
+       //this.props.loadRelations(selectorVal.toLowerCase());
     
         let selectedPassport = this.props.data.find((passport)=>{return passport.countryCode===selectorVal});
 
@@ -99,7 +100,7 @@ export default class CompareTable extends React.Component{
                 <thead>
                 <tr>
                     <th class="empty"></th>
-                    <Selector data = {data} selectorCallBack={this.selectorCallBack} title ={"Select Passport:"} controlId = {"Selector0"} loadRelations={this.props.loadRelations} />
+                    <Selector data = {data} relation={this.props.relationList} selectorCallBack={this.selectorCallBack} title ={"Select Passport:"} controlId = {"Selector0"} loadRelations={this.props.loadRelations} />
                     <Selector data = {data} title ={"Compare To:"} selectorCallBack={this.selectorCallBack} controlId = {"Selector1"} loadRelations={this.props.loadRelations}  />
                     <Selector data = {data} title ={"Compare To:"} selectorCallBack={this.selectorCallBack} controlId = {"Selector2"} loadRelations={this.props.loadRelations}/>
                     <Selector data = {data} title ={"Compare To:"} selectorCallBack={this.selectorCallBack} controlId = {"Selector3"} loadRelations={this.props.loadRelations}/>                      
