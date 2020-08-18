@@ -38,7 +38,6 @@ export class Compare extends React.Component{
       </>
     ) 
   }
- 
 };
 
 const getPassports = createSelector(
