@@ -4,13 +4,13 @@ import Table from 'react-bootstrap/Table';
 import 'bootstrap/dist/css/bootstrap.css';
 import Selector from './Selector';
 import TableHeaderBox from './TableHeaderBox';
+import TableCell from './TableCell';
 
 export default class CompareTable extends React.Component{
 
     constructor(props){
         super(props);
         this.state ={ 
-        selectorValue: null, selectorId:null,
         boxInfo0: {score:"Mobility Score",countryName:"N/A",imageName:"image"},
         boxInfo1: {score:"Mobility Score",countryName:"N/A",imageName:"image"},
         boxInfo2: {score:"Mobility Score",countryName:"N/A",imageName:"image"},
@@ -21,16 +21,14 @@ export default class CompareTable extends React.Component{
         visas3: []
         };
         this.selectorCallBack.bind(this);
-
     };
 
 
     
-    selectorCallBack = (selectorVal,id) =>{
-       //this.props.loadRelations(selectorVal.toLowerCase());
+    selectorCallBack =(selectorVal,id) =>{
     
         let selectedPassport = this.props.data.find((passport)=>{return passport.countryCode===selectorVal});
-
+        
         
         if(id==="Selector0"){
             let boxInfo0 = {score:null,countryName:null,imageName:null};
@@ -42,8 +40,6 @@ export default class CompareTable extends React.Component{
                 boxInfo0: boxInfo0
 
             })
-            //console.log("in sel0 "+this.state.visas0.length);
-            //console.log(this.props.relationList);
             
     
         }
@@ -57,8 +53,6 @@ export default class CompareTable extends React.Component{
                 boxInfo1:boxInfo1
 
             })
-           // console.log("in sel2 "+this.state.visas0.length);
-           // console.log(this.props.relationList);
         }
         else if(id==="Selector2"){
             let boxInfo2= {score:null,countryName:null,imageName:null};
@@ -96,11 +90,11 @@ export default class CompareTable extends React.Component{
         let boxInfo3 = this.state.boxInfo3;
         
         return(
-            <Table striped bordered hover responsive variant="ligth" size ="sm">
+            <Table striped bordered hover responsive variant="light" size="sm">
                 <thead>
                 <tr>
                     <th class="empty"></th>
-                    <Selector data = {data} relation={this.props.relationList} selectorCallBack={this.selectorCallBack} title ={"Select Passport:"} controlId = {"Selector0"} loadRelations={this.props.loadRelations} />
+                    <Selector data = {data} relations= {this.props.relationList} selectorCallBack={this.selectorCallBack} title ={"Select Passport:"} controlId = {"Selector0"} loadRelations={this.props.loadRelations} />
                     <Selector data = {data} title ={"Compare To:"} selectorCallBack={this.selectorCallBack} controlId = {"Selector1"} loadRelations={this.props.loadRelations}  />
                     <Selector data = {data} title ={"Compare To:"} selectorCallBack={this.selectorCallBack} controlId = {"Selector2"} loadRelations={this.props.loadRelations}/>
                     <Selector data = {data} title ={"Compare To:"} selectorCallBack={this.selectorCallBack} controlId = {"Selector3"} loadRelations={this.props.loadRelations}/>                      
@@ -117,7 +111,7 @@ export default class CompareTable extends React.Component{
                     </tr>
                 </thead>
                 <tbody>
-                 {data.map((passport,key) => {
+                {data.map((passport,key) => {
                     let visa0 = "";
                     let visa1 = "";
                     let visa2 = "";
@@ -126,28 +120,24 @@ export default class CompareTable extends React.Component{
                     if(this.state.visas0.length !==0){
                         relation = this.state.visas0.find((rel) => {return rel.countryOfDestination === passport.countryCode});
                         if(relation !== undefined){
-                            //console.log("in 0");
-                            visa0 = relation.visaCode;
+                            visa0 = relation.visaCode;                            
                         }
                     }
                     if(this.state.visas1.length !==0){
                         relation = this.state.visas1.find((rel) => {return rel.countryOfDestination === passport.countryCode});
                         if(relation !== undefined){
-                           // console.log("in 1");
                             visa1 = relation.visaCode;
                         }
                     }
                     if(this.state.visas2.length !==0){
                         relation = this.state.visas2.find((rel) => {return rel.countryOfDestination === passport.countryCode});
                         if(relation !== undefined){
-                            //console.log("in 2");
                             visa2 = relation.visaCode;
                         }
                     }
                     if(this.state.visas3.length !==0){
                         relation = this.state.visas3.find((rel) => {return rel.countryOfDestination === passport.countryCode});
                         if(relation !== undefined){
-                            //console.log("in 3");
                             visa3 = relation.visaCode;
                         }
                     }
@@ -160,10 +150,11 @@ export default class CompareTable extends React.Component{
                                 ></img>
                                 <div style={{float: "right"}}>{passport.countryName}</div>
                             </td>
-                            <td>{visa0}</td>
-                            <td>{visa1}</td>
-                            <td>{visa2}</td>
-                            <td>{visa3}</td>
+                            <TableCell code={visa0} passportName={boxInfo0.countryName} destinationName={passport.countryName}/>
+                            <TableCell code={visa1} passportName={boxInfo1.countryName} destinationName={passport.countryName}/>
+                            <TableCell code={visa2} passportName={boxInfo2.countryName} destinationName={passport.countryName}/>
+                            <TableCell code={visa3} passportName={boxInfo3.countryName} destinationName={passport.countryName}/>
+                           
                         </tr>
                         
                     )})

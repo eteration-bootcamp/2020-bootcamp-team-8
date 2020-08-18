@@ -40,8 +40,8 @@ function passportReducer(state=initialState,action){
         case LOAD_RELATIONS_SUCCESS:
             return state.merge({
                 loading: false,
-                relationList: action.relationList
-        });
+                relationList:action.relationList
+            });
         default:
             return state;
         
