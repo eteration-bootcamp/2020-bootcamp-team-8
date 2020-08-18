@@ -108,7 +108,7 @@ export default class CompareTable extends React.Component{
         let boxInfo3 = this.state.boxInfo3;
         
         return(
-            <Table striped bordered hover responsive variant="light" size="sm">
+            <Table striped bordered hover responsive variant="dark" size="sm">
                 <thead>
                 <tr>
                     <th class="empty"></th>
@@ -172,7 +172,7 @@ export default class CompareTable extends React.Component{
                             <TableCell code={visa1} passportName={boxInfo1.countryName} destinationName={passport.countryName}/>
                             <TableCell code={visa2} passportName={boxInfo2.countryName} destinationName={passport.countryName}/>
                             <TableCell code={visa3} passportName={boxInfo3.countryName} destinationName={passport.countryName}/>
-                           
+                        
                         </tr>
                         
                     )})
