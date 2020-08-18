@@ -21,12 +21,18 @@ export default class CompareTable extends React.Component{
         visas3: []
         };
         this.selectorCallBack.bind(this);
+<<<<<<< HEAD
+=======
+        this.handletableFilling.bind(this);
+        this.timer=null;
+
+>>>>>>> b1db1d3f6b7bf3a96d54a73e0dd8171ddd63afa3
     };
 
+    
 
-    
-    selectorCallBack =(selectorVal,id) =>{
-    
+    handletableFilling =(selectorVal,id) =>{
+
         let selectedPassport = this.props.data.find((passport)=>{return passport.countryCode===selectorVal});
         
         
@@ -74,9 +80,13 @@ export default class CompareTable extends React.Component{
                 boxInfo3:boxInfo3
             })
 
-        }  
-                    
-
+        }
+        clearInterval(this.timer);  
+    }
+    
+    selectorCallBack =(selectorVal,id) =>{
+        
+        this.timer = setTimeout(() => this.handletableFilling(selectorVal,id),200)
     }
 
     

@@ -12,7 +12,11 @@ export default class Selector extends React.Component{
     }
     async handleChange(e,id){
         await this.props.loadRelations(e.toLowerCase());
+<<<<<<< HEAD
         //if(this.props.relation.length !== 0){
+=======
+        
+>>>>>>> b1db1d3f6b7bf3a96d54a73e0dd8171ddd63afa3
         this.props.selectorCallBack(e,id);
         
     }
