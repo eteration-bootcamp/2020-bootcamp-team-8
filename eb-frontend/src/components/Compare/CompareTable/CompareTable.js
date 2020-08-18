@@ -21,8 +21,11 @@ export default class CompareTable extends React.Component{
         };
         this.selectorCallBack.bind(this);
         this.handletableFilling.bind(this);
+        this.timer=null;
 
     };
+
+    
 
     handletableFilling =(selectorVal,id) =>{
 
@@ -77,12 +80,13 @@ export default class CompareTable extends React.Component{
                 boxInfo3:boxInfo3
             })
 
-        }  
+        }
+        clearInterval(this.timer);  
     }
     
     selectorCallBack =(selectorVal,id) =>{
-        if(this.props.loading === false)
-            this.handletableFilling(selectorVal,id);
+        
+        this.timer = setTimeout(() => this.handletableFilling(selectorVal,id),200)
     }
 
     
