@@ -20,13 +20,12 @@ export default class CompareTable extends React.Component{
         visas3: []
         };
         this.selectorCallBack.bind(this);
+        this.handletableFilling.bind(this);
 
     };
 
+    handletableFilling =(selectorVal,id) =>{
 
-    
-    selectorCallBack =(selectorVal,id) =>{
-    
         let selectedPassport = this.props.data.find((passport)=>{return passport.countryCode===selectorVal});
         
         
@@ -79,8 +78,11 @@ export default class CompareTable extends React.Component{
             })
 
         }  
-                    
-
+    }
+    
+    selectorCallBack =(selectorVal,id) =>{
+        if(this.props.loading === false)
+            this.handletableFilling(selectorVal,id);
     }
 
     
