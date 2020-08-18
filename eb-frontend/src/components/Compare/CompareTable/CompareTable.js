@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import Selector from './Selector';
 import TableHeaderBox from './TableHeaderBox';
 import TableCell from './TableCell';
+import styles from './style.css';
 
 export default class CompareTable extends React.Component{
 
@@ -29,7 +30,7 @@ export default class CompareTable extends React.Component{
     
 
     handletableFilling =(selectorVal,id) =>{
-
+        if(selectorVal !== ""){
         let selectedPassport = this.props.data.find((passport)=>{return passport.countryCode===selectorVal});
         
         
@@ -78,12 +79,23 @@ export default class CompareTable extends React.Component{
             })
 
         }
+    }else{
+        let boxInfo = {score:"Mobility Score",countryName:"N/A",imageName:"image"};
+        if(id==="Selector0")
+            this.setState({visas0:[],boxInfo0:boxInfo});
+        else if(id==="Selector1")
+            this.setState({visas1:[],boxInfo1:boxInfo});
+        else if(id==="Selector2")
+            this.setState({visas2:[],boxInfo2:boxInfo});
+        else
+            this.setState({visas3:[],boxInfo3:boxInfo});
+    }
         clearInterval(this.timer);  
     }
     
     selectorCallBack =(selectorVal,id) =>{
         
-        this.timer = setTimeout(() => this.handletableFilling(selectorVal,id),200)
+        this.timer = setTimeout(() => this.handletableFilling(selectorVal,id),100)
     }
 
     
@@ -109,7 +121,11 @@ export default class CompareTable extends React.Component{
                 </thead>
                 <thead>
                     <tr>
-                        <th></th>
+                        <th className={styles.headerBox}>
+                        <div style={{width: "88px", height: "125px"}}></div>
+                        <div></div>
+                        <div></div>
+                        </th>
                         <TableHeaderBox imageName={boxInfo0.imageName} countryName={boxInfo0.countryName} score={boxInfo0.score}/>
                         <TableHeaderBox imageName={boxInfo1.imageName} countryName={boxInfo1.countryName} score={boxInfo1.score}/>
                         <TableHeaderBox imageName={boxInfo2.imageName} countryName={boxInfo2.countryName} score={boxInfo2.score}/>

@@ -12,6 +12,7 @@ export default class Selector extends React.Component{
     }
     async handleChange(e,id){
         await this.props.loadRelations(e.toLowerCase());
+        
         this.props.selectorCallBack(e,id);
         
     }
@@ -22,10 +23,9 @@ export default class Selector extends React.Component{
         
         return(
             <th>
-            <Form.Group controlId={this.props.controlId} >
-                <Form.Label>{this.props.title}</Form.Label>
+            <Form.Group style={{ margin: "auto"}} controlId={this.props.controlId} >
                 <Form.Control as="select" onChange={ event => this.handleChange(event.target.value,event.target.id)} >
-                    <option  value = "">Select Passport</option>
+                    <option  value = "">Select Passport:</option>
                     {data.map((passport,key) =>{
                         return(
                         <option  value = {passport.countryCode}>{passport.countryName}</option>

@@ -13,5 +13,6 @@ h1.header2{
 h5.header2{
     vertical-align: middle;
     font-style: italic;
-    padding-bottom:1px;
+    padding-bottom:10px;
+    padding-top:20px;
 }

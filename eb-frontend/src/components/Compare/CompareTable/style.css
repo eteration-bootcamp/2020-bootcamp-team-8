@@ -31,3 +31,8 @@ td.VR{
 td.number{
     background-color: green;
 }
+
+.headerBox{
+    height: 138px;
+    width: 182;
+}
