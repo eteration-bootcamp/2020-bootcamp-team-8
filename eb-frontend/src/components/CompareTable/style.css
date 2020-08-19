@@ -18,24 +18,24 @@
 }
 
 td.VF{
-    background-color: rgb(40, 202, 40);
+    background-color: rgb(59, 228, 59);
 }
 
 
 td.VOA{
-    background-color: rgb(53, 109, 240);
+    background-color: rgb(129, 161, 238);
 }
 
 td.ETA{
-    background-color: rgb(207, 207, 8);
+    background-color: rgb(230, 230, 118);
 }
 
 td.VR{
-    background-color: rgb(204, 4, 4);
+    background-color: rgb(226, 88, 88);
 }
 
 td.number{
-    background-color: rgb(16, 144, 16);
+    background-color: rgb(59, 228, 59);
 }
 
 div.headerBox{
@@ -78,4 +78,4 @@ div.mobilityScore{
 
 .mytooltip .tooltip-inner {
     max-width: 400px;
-  }
+}

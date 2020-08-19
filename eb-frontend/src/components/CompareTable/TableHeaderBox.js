@@ -8,7 +8,7 @@ export default class TableHeaderBox extends React.Component{
             
             imageName= <img src={require('./../../images/passport_images/'+imageName)}
             alt={"passport image of "+ countryName}
-            style={{width: "88px", height: "125px", float: "left", borderStyle: "solid", borderColor: "red", borderWidth: "thin"}}
+            style={{width: "88px", height: "125px", float: "left"}}
             />
             return(
                 <th>
