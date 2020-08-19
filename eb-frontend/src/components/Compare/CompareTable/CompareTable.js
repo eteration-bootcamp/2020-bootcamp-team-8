@@ -169,9 +169,9 @@ export default class CompareTable extends React.Component{
                             <td>
                                 <img src={require('./../../../images/png_128/'+passport.countryName.toLowerCase()+'.png')} 
                                 width="50px" height ="40px" alt="flag"
-                                
+                                style={{float: "left", paddingRight: "5px"}}
                                 ></img>
-                                <div style={{float: "right"}}>{passport.countryName}</div>
+                                <div> style={{verticalAlign: "middle"}}{passport.countryName}</div>
                             </td>
                             <TableCell code={visa0} passportName={boxInfo0.countryName} destinationName={passport.countryName}/>
                             <TableCell code={visa1} passportName={boxInfo1.countryName} destinationName={passport.countryName}/>
