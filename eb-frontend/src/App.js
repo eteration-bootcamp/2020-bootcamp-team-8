@@ -1,11 +1,11 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './App.css';
-import NavBar from './containers/Navbar/NavBar';
-import Explore from './components/Explore/Explore';
-import Compare from './components/Compare';
-import Discover from './components/Discover/Discover';
-import Rank from './components/Rank/Rank';
+import NavBar from './components/Navbar/NavBar';
+import Explore from './containers/Explore/Explore';
+import Compare from './containers/Compare';
+import Discover from './containers/Discover/Discover';
+import Rank from './containers/Rank/Rank';
 
 import * as ROUTES from './routes';
 
