@@ -42,12 +42,14 @@ const PASSPORTS = [
     },
 
     {
+      index: 4,
       key: 'africa-1',
       text: 'Africa 1',
       image:
         'https://upload.wikimedia.org/wikipedia/commons/a/a1/Kenyan_E-passport.jpg',
     },
     {
+      index: 5,
       key: 'africa-2',
       text: 'Africa 2',
       image:
@@ -56,6 +58,7 @@ const PASSPORTS = [
   ],
   [
     {
+      index: 6,
       key: 'africa-0',
       text: 'Africa 0',
       image:
@@ -63,6 +66,7 @@ const PASSPORTS = [
     },
 
     {
+      index: 7,
       key: 'africa-1',
       text: 'Africa 1',
       image:

@@ -22,6 +22,9 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const CustomGrid = () => {
+
+  //////////const passportList =this.passportList;
+  
   const [open, setOpen] = useState(false);
   const [selectedPassport, setSelectedPassport] = useState({});
   const classes = useStyles();
@@ -41,7 +44,7 @@ const CustomGrid = () => {
       <>
         {_.map(passports, (passport) => (
           <Grid item xs={12} md={2} key={passport.key} style={{ height: 250 }}>
-            <Button>
+            <Button >
               <Paper className={classes.paper}>
                 <img
                   className={styles.image}
@@ -50,6 +53,7 @@ const CustomGrid = () => {
                   onClick={() => handleOpenModal(passport)}
                 />
               </Paper>
+              {passport.text}
             </Button>
           </Grid>
         ))}
@@ -69,7 +73,7 @@ const CustomGrid = () => {
     const { index } = selectedPassport;
     setSelectedPassport(flattenPassports[index + 1]);
   };
-
+ 
   return (
     <div className={classes.root}>
       <Grid container spacing={3}>
