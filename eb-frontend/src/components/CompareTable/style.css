@@ -1,0 +1,81 @@
+.table-head-selector{
+    margin-top: 100px;
+    margin-left: 30px;
+    margin-right: auto;
+}
+.selector1{
+    width: 120px;
+    height: 60px;
+}
+.selector2{
+    width: 60px;
+    height: 40px;
+}
+
+.code{
+    vertical-align: middle;
+    text-align: center;
+}
+
+td.VF{
+    background-color: rgb(40, 202, 40);
+}
+
+
+td.VOA{
+    background-color: rgb(53, 109, 240);
+}
+
+td.ETA{
+    background-color: rgb(207, 207, 8);
+}
+
+td.VR{
+    background-color: rgb(204, 4, 4);
+}
+
+td.number{
+    background-color: rgb(16, 144, 16);
+}
+
+div.headerBox{
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+}
+
+
+
+.headerBox > div:first-child{
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 100px;
+}
+
+
+.headerBox > div{
+    flex-grow: 0;
+    flex-shrink: 0;
+    height: 125px;
+}
+
+div.score{
+    vertical-align: middle;
+    text-align: left;
+    font-weight: bold;
+    font-size: 35px;
+    padding-top:25px;
+}
+
+div.mobilityScore{
+    font-style: italic;
+    vertical-align: bottom;
+    text-align: left;
+    padding-top:15px;
+    font-size: 20px;
+}
+
+
+.mytooltip .tooltip-inner {
+    max-width: 400px;
+  }
