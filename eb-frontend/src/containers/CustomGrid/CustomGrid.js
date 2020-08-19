@@ -4,7 +4,6 @@ import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import styles from './CustomGrid.module.css';
 import { Button, Modal } from '@material-ui/core';
-import { AccessAlarm, ThreeDRotation } from '@material-ui/icons';
 import _ from 'lodash';
 import { PASSPORTS, CONTINENTS } from '../../constants';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';

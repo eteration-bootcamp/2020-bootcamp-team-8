@@ -1,16 +1,11 @@
 import React from 'react';
 import CustomGrid from '../../containers/CustomGrid/CustomGrid';
-import styles from './Explore.module.css';
 import {connect} from 'react-redux';
 import {createSelector} from 'reselect';
 import { loadPassports ,loadRelations} from '../../actions/passports';
 
 
 export class Explore extends React.Component{
-  constructor(props){
-    super(props);
-    
-  }
   
   componentDidMount(){
     if(this.props.passport.passportList.length === 0){
@@ -20,7 +15,7 @@ export class Explore extends React.Component{
   render(){
 
     return(
-     <CustomGrid passportList={this.props.passport.passportList}/>
+      <CustomGrid passportList={this.props.passport.passportList}/>
     ) 
   }
 };

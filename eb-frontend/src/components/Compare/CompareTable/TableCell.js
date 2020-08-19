@@ -1,7 +1,7 @@
 import React from 'react';
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import Tooltip from 'react-bootstrap/Tooltip';   
-import styles from './style.css';
+
 
 export default class TableCell extends React.Component{
 
