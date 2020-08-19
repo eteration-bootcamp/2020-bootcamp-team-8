@@ -26,97 +26,90 @@ export default class CompareTable extends React.Component{
         this.timer=null;
 
     };
-
-    
-
     handletableFilling =(selectorVal,id) =>{
+        
         if(selectorVal !== ""){
-        let selectedPassport = this.props.data.find((passport)=>{return passport.countryCode===selectorVal});
-        
-        
-        if(id==="Selector0"){
-            let boxInfo0 = {score:null,countryName:null,imageName:null};
-            boxInfo0.score=selectedPassport.visaFree+selectedPassport.eta + selectedPassport.visaOnArrival;
-            boxInfo0.countryName=selectedPassport.countryName;
-            boxInfo0.imageName=selectedPassport.imageName;
-            this.setState({
-                visas0:this.props.relationList,
-                boxInfo0: boxInfo0
-
-            })
             
-    
-        }
-        else if(id==="Selector1" ){
-            let boxInfo1 = {score:null,countryName:null,imageName:null};
-            boxInfo1.score=selectedPassport.visaFree+selectedPassport.eta + selectedPassport.visaOnArrival;
-            boxInfo1.countryName=selectedPassport.countryName;
-            boxInfo1.imageName=selectedPassport.imageName;
-            this.setState({
-                visas1:this.props.relationList,
-                boxInfo1:boxInfo1
+            let selectedPassport = this.props.data.find((passport)=>{return passport.countryCode===selectorVal});
+        
+            if(id==="Selector0"){
+                
+                let boxInfo0 = {score:null,countryName:null,imageName:null};
+                boxInfo0.score=selectedPassport.visaFree+selectedPassport.eta + selectedPassport.visaOnArrival;
+                boxInfo0.countryName=selectedPassport.countryName;
+                boxInfo0.imageName=selectedPassport.imageName;
+                this.setState({
+                    visas0:this.props.relationList,
+                    boxInfo0: boxInfo0
+                })
+            }
+            else if(id==="Selector1" ){
+                let boxInfo1 = {score:null,countryName:null,imageName:null};
+                boxInfo1.score=selectedPassport.visaFree+selectedPassport.eta + selectedPassport.visaOnArrival;
+                boxInfo1.countryName=selectedPassport.countryName;
+                boxInfo1.imageName=selectedPassport.imageName;
+                this.setState({
+                    visas1:this.props.relationList,
+                    boxInfo1:boxInfo1
+                })
+            }
+            else if(id==="Selector2"){
+                let boxInfo2= {score:null,countryName:null,imageName:null};
+                boxInfo2.score=selectedPassport.visaFree+selectedPassport.eta + selectedPassport.visaOnArrival;
+                boxInfo2.countryName=selectedPassport.countryName;
+                boxInfo2.imageName=selectedPassport.imageName;
+                this.setState({
+                    visas2:this.props.relationList,
+                    boxInfo2:boxInfo2
 
-            })
-        }
-        else if(id==="Selector2"){
-            let boxInfo2= {score:null,countryName:null,imageName:null};
-            boxInfo2.score=selectedPassport.visaFree+selectedPassport.eta + selectedPassport.visaOnArrival;
-            boxInfo2.countryName=selectedPassport.countryName;
-            boxInfo2.imageName=selectedPassport.imageName;
-            this.setState({
-                visas2:this.props.relationList,
-                boxInfo2:boxInfo2
+                })
+            }else if(id==="Selector3"){
+                let boxInfo3 = {score:null,countryName:null,imageName:null};
+                boxInfo3.score=selectedPassport.visaFree+selectedPassport.eta + selectedPassport.visaOnArrival;
+                boxInfo3.countryName=selectedPassport.countryName;
+                boxInfo3.imageName=selectedPassport.imageName;
+                this.setState({
+                    visas3:this.props.relationList,
+                    boxInfo3:boxInfo3
+                })
+            }
+        }else{
 
-            })
-        }else if(id==="Selector3"){
-            let boxInfo3 = {score:null,countryName:null,imageName:null};
-            boxInfo3.score=selectedPassport.visaFree+selectedPassport.eta + selectedPassport.visaOnArrival;
-            boxInfo3.countryName=selectedPassport.countryName;
-            boxInfo3.imageName=selectedPassport.imageName;
-            this.setState({
-                visas3:this.props.relationList,
-                boxInfo3:boxInfo3
-            })
-
+            let boxInfo = {score:"Mobility Score",countryName:"N/A",imageName:"image"};
+            if(id==="Selector0")
+                this.setState({visas0:[],boxInfo0:boxInfo});
+            else if(id==="Selector1")
+                this.setState({visas1:[],boxInfo1:boxInfo});
+            else if(id==="Selector2")
+                this.setState({visas2:[],boxInfo2:boxInfo});
+            else
+                this.setState({visas3:[],boxInfo3:boxInfo});
         }
-    }else{
-        let boxInfo = {score:"Mobility Score",countryName:"N/A",imageName:"image"};
-        if(id==="Selector0")
-            this.setState({visas0:[],boxInfo0:boxInfo});
-        else if(id==="Selector1")
-            this.setState({visas1:[],boxInfo1:boxInfo});
-        else if(id==="Selector2")
-            this.setState({visas2:[],boxInfo2:boxInfo});
-        else
-            this.setState({visas3:[],boxInfo3:boxInfo});
-    }
+        
         clearInterval(this.timer);  
     }
     
-    selectorCallBack =(selectorVal,id) =>{
+    selectorCallBack =(passportId,selectorId) =>{
         
-        this.timer = setTimeout(() => this.handletableFilling(selectorVal,id),100)
+        this.timer = setTimeout(() => this.handletableFilling(passportId,selectorId),50)
+        
     }
-
-    
-
-
     render(){
         const {data} = this.props;
         let boxInfo0 = this.state.boxInfo0;
         let boxInfo1 = this.state.boxInfo1;
         let boxInfo2 = this.state.boxInfo2;
         let boxInfo3 = this.state.boxInfo3;
-        
+        const loadRelations = this.props.loadRelations;
         return(
             <Table striped bordered hover responsive variant="light" size="sm">
                 <thead>
                 <tr>
                     <th class="empty"></th>
-                    <PassportSelector data = {data} relations= {this.props.relationList} selectorCallBack={this.selectorCallBack} title ={"Select Passport:"} controlId = {"Selector0"} loadRelations={this.props.loadRelations} />
-                    <PassportSelector data = {data} title ={"Compare To:"} selectorCallBack={this.selectorCallBack} controlId = {"Selector1"} loadRelations={this.props.loadRelations}  />
-                    <PassportSelector data = {data} title ={"Compare To:"} selectorCallBack={this.selectorCallBack} controlId = {"Selector2"} loadRelations={this.props.loadRelations}/>
-                    <PassportSelector data = {data} title ={"Compare To:"} selectorCallBack={this.selectorCallBack} controlId = {"Selector3"} loadRelations={this.props.loadRelations}/>                      
+                    <PassportSelector data = {data} title ={"Select Passport:"} selectorCallBack={this.selectorCallBack} controlId = {"Selector0"} loadRelations={loadRelations} />
+                    <PassportSelector data = {data} title ={"Compare To:"} selectorCallBack={this.selectorCallBack} controlId = {"Selector1"} loadRelations={loadRelations}  />
+                    <PassportSelector data = {data} title ={"Compare To:"} selectorCallBack={this.selectorCallBack} controlId = {"Selector2"} loadRelations={loadRelations}/>
+                    <PassportSelector data = {data} title ={"Compare To:"} selectorCallBack={this.selectorCallBack} controlId = {"Selector3"} loadRelations={loadRelations}/>                      
                 </tr>
                 </thead>
                 <thead>
@@ -177,17 +170,11 @@ export default class CompareTable extends React.Component{
                             <TableCell code={visa1} passportName={boxInfo1.countryName} destinationName={passport.countryName}/>
                             <TableCell code={visa2} passportName={boxInfo2.countryName} destinationName={passport.countryName}/>
                             <TableCell code={visa3} passportName={boxInfo3.countryName} destinationName={passport.countryName}/>
-                        
                         </tr>
-                        
                     )})
                 }
-
-                    
                 </tbody>
-                </Table>
-                
-
+        </Table>            
         )
     }
 }

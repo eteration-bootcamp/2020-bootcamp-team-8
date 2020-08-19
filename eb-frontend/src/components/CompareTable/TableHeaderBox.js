@@ -2,6 +2,7 @@ import React from 'react';
 import './style.css';
 
 export default class TableHeaderBox extends React.Component{
+    
     render(){
         let {imageName,countryName,score} = this.props;
         if(countryName !=="N/A"){
@@ -25,16 +26,15 @@ export default class TableHeaderBox extends React.Component{
         else{
             return(
                 <th>
-                <div class="headerBox">
-                    <div></div>
-                    <div>
-                        <div class="score" style={{color:"grey"}}>N/A</div>
-                        <div class="mobilityScore">Mobility Score</div>
+                    <div class="headerBox">
+                        <div></div>
+                        <div>
+                            <div class="score" style={{color:"grey"}}>N/A</div>
+                            <div class="mobilityScore">Mobility Score</div>
+                        </div>
                     </div>
-                </div>
-            </th>
+                </th>
             )
-    
         }
     }
 }
