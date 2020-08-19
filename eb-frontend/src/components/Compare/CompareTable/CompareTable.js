@@ -109,7 +109,7 @@ export default class CompareTable extends React.Component{
         let boxInfo3 = this.state.boxInfo3;
         
         return(
-            <Table striped bordered hover responsive variant="dark" size="sm">
+            <Table striped bordered hover responsive variant="light" size="sm">
                 <thead>
                 <tr>
                     <th class="empty"></th>
@@ -166,12 +166,12 @@ export default class CompareTable extends React.Component{
                     }
                     return(
                         <tr>
-                            <td>
+                            <td style={{verticalAlign: "middle"}}>
                                 <img src={require('./../../../images/png_128/'+passport.countryName.toLowerCase()+'.png')} 
                                 width="50px" height ="40px" alt="flag"
                                 style={{float: "left", paddingRight: "5px"}}
                                 ></img>
-                                <div style={{verticalAlign: "middle"}}>{passport.countryName}</div>
+                                <div>{passport.countryName}</div>
                             </td>
                             <TableCell code={visa0} passportName={boxInfo0.countryName} destinationName={passport.countryName}/>
                             <TableCell code={visa1} passportName={boxInfo1.countryName} destinationName={passport.countryName}/>

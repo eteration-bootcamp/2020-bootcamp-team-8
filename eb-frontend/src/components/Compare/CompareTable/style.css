@@ -12,27 +12,70 @@
     height: 40px;
 }
 
+.code{
+    vertical-align: middle;
+    text-align: center;
+}
+
 td.VF{
     background-color: rgb(40, 202, 40);
 }
 
+
 td.VOA{
-    background-color: blue;
+    background-color: rgb(53, 109, 240);
 }
 
 td.ETA{
-    background-color: yellow;
+    background-color: rgb(207, 207, 8);
 }
 
 td.VR{
-    background-color: red;
+    background-color: rgb(204, 4, 4);
 }
 
 td.number{
-    background-color: green;
+    background-color: rgb(16, 144, 16);
 }
 
-.headerBox{
-    height: 138px;
-    width: 182;
+div.headerBox{
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
 }
+
+
+
+.headerBox > div:first-child{
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 100px;
+}
+
+
+.headerBox > div{
+    flex-grow: 0;
+    flex-shrink: 0;
+    height: 125px;
+}
+
+div.score{
+    vertical-align: middle;
+    text-align: left;
+    font-weight: bold;
+    font-size: 35px;
+    padding-top:25px;
+}
+
+div.mobilityScore{
+    font-style: italic;
+    vertical-align: bottom;
+    text-align: left;
+    padding-top:15px;
+    font-size: 20px;
+}
+
+
+.mytooltip .tooltip-inner {
+    max-width: 400px;
+  }

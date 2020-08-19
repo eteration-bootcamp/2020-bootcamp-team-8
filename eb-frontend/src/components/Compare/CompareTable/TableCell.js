@@ -27,17 +27,17 @@ export default class TableCell extends React.Component{
             codeMessage = "visa required";
         }else if (code >= 7 && code <=360){
             codeMessage = "visa free / " + code + " days";
-            codeClass = "number";
+            codeClass += " number";
         }
 
         const renderTooltip = (props) => (
-            <Tooltip id={'tooltip'} {...props}>
+            <Tooltip className="mytooltip" id={'tooltip'} {...props}>
             For Passport Holders of {passportName} Going To {destinationName}
             </Tooltip>
         );
         
         return(
-            <td class= {codeClass} style={{verticalAlign: "middle", textAlign: "center"}}>
+            <td class={codeClass} style={{verticalAlign: "middle", textAlign: "center"}}>
                 <OverlayTrigger
                 placement="top"
                 delay={{ show: 250, hide: 400 }}

@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './style.css';
+import './style.css';
 
 export default class TableHeaderBox extends React.Component{
     render(){
@@ -11,19 +11,28 @@ export default class TableHeaderBox extends React.Component{
             />
 
             return(
-                <th className={styles.headerBox}>
-                    <div>{imageName}</div>
-                    <div style={{verticalAlign: "middle", textAlign: "center", display:"inline"}}>{score}</div>
-                    <div style={{fontStyle: "italic",verticalAlign: "bottom", textAlign: "center"}}>Mobility Score</div>
+                <th>
+                    <div class="headerBox">
+                        <div>{imageName}</div>
+                        <div>
+                            <div class="score">{score}</div>
+                            <div class="mobilityScore">Mobility Score</div>
+                        </div>
+                     </div>
                 </th>
                 )
         }
         else{
              return(
-                <th className={styles.headerBox}>
-                    <div style={{verticalAlign: "middle", textAlign: "center", display:"inline"}}>N/A</div>
-                    <div style={{fontStyle: "italic",verticalAlign: "bottom", textAlign: "center"}}>Mobility Score</div>
-                 </th>
+                <th>
+                <div class="headerBox">
+                    <div></div>
+                    <div>
+                        <div class="score" style={{color:"grey"}}>N/A</div>
+                        <div class="mobilityScore">Mobility Score</div>
+                    </div>
+                 </div>
+            </th>
             )
     
         }

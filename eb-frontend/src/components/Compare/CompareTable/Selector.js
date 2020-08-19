@@ -25,7 +25,7 @@ export default class Selector extends React.Component{
             <th>
             <Form.Group style={{ margin: "auto"}} controlId={this.props.controlId} >
                 <Form.Control as="select" onChange={ event => this.handleChange(event.target.value,event.target.id)} >
-                    <option  value = "">Select Passport:</option>
+                    <option  value = "">{this.props.title}</option>
                     {data.map((passport,key) =>{
                         return(
                         <option  value = {passport.countryCode}>{passport.countryName}</option>
