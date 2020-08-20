@@ -5,6 +5,7 @@ import Grid from '@material-ui/core/Grid';
 import styles from './CustomGrid.module.css';
 import { Button, Modal, Typography } from '@material-ui/core';
 import _ from 'lodash';
+import { PASSPORTS, CONTINENTS } from '../../constants';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 
@@ -51,13 +52,13 @@ const CustomGrid = ({ data }) => {
         {_.map(passports, (passport) => (
           <Grid
             item
-            xs={12}
-            sm={6}
+            xs={6}
+            sm={3}
             md={2}
             key={passport.countryCode}
-            style={{ height: 300 }}
+            style={{ height: 300, maxWidth: '12%' }}
           >
-            <Button style={{ height: 280 }}>
+            <Button className={styles.zoom} style={{ height: 280 }}>
               <Paper className={classes.paper} style={{ height: 280 }}>
                 <img
                   className={styles.image}
