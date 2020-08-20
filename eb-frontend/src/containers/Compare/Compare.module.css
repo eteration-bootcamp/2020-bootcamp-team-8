@@ -3,10 +3,11 @@ div.header2{
     margin-bottom: 50px; 
     text-align: center;
     vertical-align: middle;
+    background-color: #343A40;
 }
 
 h1.header2{
-    color: #d3a305;
+    color: #cec2eb;
     vertical-align: middle;
 
 }
@@ -15,4 +16,5 @@ h5.header2{
     font-style: italic;
     padding-bottom:15px;
     padding-top:20px;
+    color: white;
 }

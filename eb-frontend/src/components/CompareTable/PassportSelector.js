@@ -1,5 +1,8 @@
 import React from 'react';
 import Form from 'react-bootstrap/Form';
+import { StylesProvider } from '@material-ui/core';
+import styles from './style.css';
+
 
 export default class Selector extends React.Component{
     
@@ -18,10 +21,10 @@ export default class Selector extends React.Component{
         const passportList = this.props.data;
         
         return(
-            <th>
+            <th style={{backgroundColor: "#6c757d"}}>
             <Form.Group style={{ margin: "auto"}} controlId={this.props.controlId} >
                 <Form.Control as="select" onChange={ event => this.handleChange(event.target.value,event.target.id)} >
-                    <option  value = "">{this.props.title}</option>
+                    <option  value = "" style={{color:"#cec2eb"}}>{this.props.title}</option>
                     {passportList.map((passport,key) =>{
                         return(
                         <option  value = {passport.countryCode}>{passport.countryName}</option>
