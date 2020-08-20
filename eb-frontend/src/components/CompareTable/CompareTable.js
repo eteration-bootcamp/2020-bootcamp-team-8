@@ -102,7 +102,7 @@ export default class CompareTable extends React.Component{
         let boxInfo3 = this.state.boxInfo3;
         const loadRelations = this.props.loadRelations;
         return(
-            <Table striped bordered hover responsive variant="light" size="sm">
+            <Table striped bordered hover responsive variant="dark" size="sm">
                 <thead>
                 <tr>
                     <th class="empty"></th>

@@ -32,11 +32,6 @@ const NavBar = () => {
               Compare
             </NavLink>
           </li>
-          <li>
-            <NavLink activeClassName={styles.active} to={ROUTES.DISCOVER}>
-              Discover
-            </NavLink>
-          </li>
         </ul>
       </div>
     </nav>

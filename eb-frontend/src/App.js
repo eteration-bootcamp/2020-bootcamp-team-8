@@ -4,7 +4,6 @@ import './App.css';
 import NavBar from './components/Navbar/NavBar';
 import Explore from './containers/Explore/Explore';
 import Compare from './containers/Compare';
-import Discover from './containers/Discover/Discover';
 import Rank from './containers/Rank/Rank';
 
 import * as ROUTES from './routes';
@@ -20,7 +19,6 @@ function App() {
           <Route exact path={ROUTES.EXPLORE} component={Explore} />
           <Route exact path={ROUTES.RANK} component={Rank} />
           <Route exact path={ROUTES.COMPARE} component={Compare} />
-          <Route exact path={ROUTES.DISCOVER} component={Discover} />
         </Switch>
       </div>
     </Router>
