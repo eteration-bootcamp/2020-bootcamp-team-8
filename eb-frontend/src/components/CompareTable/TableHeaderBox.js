@@ -16,8 +16,8 @@ export default class TableHeaderBox extends React.Component{
                     <div class="headerBox">
                         <div>{imageName}</div>
                         <div>
-                            <div class="countryName">{countryName}</div>
-                            <div class="mobilityScore">{score}</div>
+                            <div class="countryName">{score}</div>
+                            <div class="mobilityScore">Mobility Score</div>
                         </div>
                     </div>
                 </th>
