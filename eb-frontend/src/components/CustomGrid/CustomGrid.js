@@ -5,7 +5,6 @@ import Grid from '@material-ui/core/Grid';
 import styles from './CustomGrid.module.css';
 import { Button, Modal, Typography } from '@material-ui/core';
 import _ from 'lodash';
-import { PASSPORTS, CONTINENTS } from '../../constants';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 

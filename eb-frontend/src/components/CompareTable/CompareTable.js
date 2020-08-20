@@ -160,7 +160,7 @@ export default class CompareTable extends React.Component{
                     return(
                         <tr>
                             <td style={{verticalAlign: "middle"}}>
-                                <img src={require('./../../images/png_128/'+passport.countryName.toLowerCase()+'.png')} 
+                                <img src={require('./../../../public/images/png_128/'+passport.countryName.toLowerCase()+'.png')} 
                                 width="50px" height ="40px" alt="flag"
                                 style={{float: "left", paddingRight: "5px"}}
                                 ></img>
