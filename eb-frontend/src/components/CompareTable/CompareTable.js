@@ -91,7 +91,7 @@ export default class CompareTable extends React.Component{
     
     selectorCallBack =(passportId,selectorId) =>{
         
-        this.timer = setTimeout(() => this.handletableFilling(passportId,selectorId),50)
+        this.timer = setTimeout(() => this.handletableFilling(passportId,selectorId),1000)
         
     }
     render(){
