@@ -16,8 +16,8 @@ export default class TableHeaderBox extends React.Component{
                     <div class="headerBox">
                         <div>{imageName}</div>
                         <div>
-                            <div class="score">{score}</div>
-                            <div class="mobilityScore">{countryName}</div>
+                            <div class="countryName">{countryName}</div>
+                            <div class="mobilityScore">{score}</div>
                         </div>
                     </div>
                 </th>
@@ -29,7 +29,7 @@ export default class TableHeaderBox extends React.Component{
                     <div class="headerBox">
                         <div></div>
                         <div>
-                            <div class="score" style={{color:"grey"}}>N/A</div>
+                            <div class="countryName" style={{color:"grey"}}>N/A</div>
                             <div class="mobilityScore">Mobility Score</div>
                         </div>
                     </div>
