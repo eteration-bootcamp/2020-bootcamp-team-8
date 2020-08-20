@@ -21,12 +21,13 @@
   <p align="center">
     See how strong your passs is ssz
 <!-- TABLE OF CONTENTS -->
+  
 ## Table of Contents
 
 * [About the Project](#about-the-project)
   * [Built With](#built-with)
   * [Frameworks](#frameworks)
-  *
+  * [Technologies](#technologies)
 * [Getting Started](#getting-started)
   * [Prerequisites](#prerequisites)
   * [Installation](#installation)
@@ -55,3 +56,18 @@ Let's set up PassPal locally
 * jdksomenumber
 * dasddas
 * dasdsa
+
+### Installation
+
+1. Clone the repo
+```sh
+git clone https://github.com/your_username_/Project-Name.git
+```
+2. Install NPM packages
+```sh
+npm install
+```
+3. Run the project
+```sh
+npm run
+```
