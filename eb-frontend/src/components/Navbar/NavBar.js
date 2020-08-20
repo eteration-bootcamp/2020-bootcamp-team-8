@@ -23,11 +23,6 @@ const NavBar = () => {
             </NavLink>
           </li>
           <li>
-            <NavLink activeClassName={styles.active} to={ROUTES.RANK}>
-              Rank
-            </NavLink>
-          </li>
-          <li>
             <NavLink activeClassName={styles.active} to={ROUTES.COMPARE}>
               Compare
             </NavLink>
