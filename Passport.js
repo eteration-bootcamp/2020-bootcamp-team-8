@@ -71,7 +71,7 @@ class Passport extends Component {
 +-----------------+-------------+------+-----+---------+----------------+
  */
 
-    const style = { marginLeft: "1rem auto", width: "1200px", height: "300px" };
+    const style = { marginLeft: "1rem auto", width: "600px", height: "300px" };
     /*
     const styleCountryTable = {
       Right: "10px",
@@ -124,7 +124,23 @@ class Passport extends Component {
     return (
       <div>
         <AppNav />
-
+        <div className='rowC'>
+          <div style={style}>
+            <VectorMap {...world} layerProps={{ onClick }} />
+          </div>
+          <Table className='mt-1' id='table-class'>
+            <thead>
+              <tr>
+                <th width='5%'>CountryName</th>
+                <th width='5%'>Continent</th>
+                <th width='5%'>VisaFree</th>
+                <th width='5%'> VisaRequired</th>
+                <th width='5%'> ETA</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </Table>
+        </div>
         <InteractiveTable
           tableStyles={"responsive"}
           dataList={passports}
@@ -192,23 +208,6 @@ class Passport extends Component {
         <p>Hovered: {hovered && <code>{hovered}</code>}</p>
         <p>Focused: {focused && <code>{focused}</code>}</p>
         <p>Clicked: {clicked && <code>{clicked}</code>}</p>*/}
-        <div className='rowC'>
-          <div style={style}>
-            <VectorMap {...world} layerProps={{ onClick }} />
-          </div>
-          <Table className='mt-1' id='table-class'>
-            <thead>
-              <tr>
-                <th width='5%'>CountryName</th>
-                <th width='5%'>Continent</th>
-                <th width='5%'>VisaFree</th>
-                <th width='5%'> VisaRequired</th>
-                <th width='5%'> ETA</th>
-              </tr>
-            </thead>
-            <tbody></tbody>
-          </Table>
-        </div>
       </div>
     );
   }
