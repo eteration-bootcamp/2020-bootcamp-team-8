@@ -5,21 +5,27 @@ import { VectorMap } from '@south-paw/react-vector-maps';
 import styles from './Rank.css';
 
 import world from './World.json';
-import { colors } from '@material-ui/core';
+//import { colors } from '@material-ui/core';
 
-class PassportRankList extends Component {
-  render() {
+
+
+
+export default class PassportRankList extends Component {
+
+
+
+    render() {
     const passports = this.props.passportList;
-
+    //eslint-disable-next-line
     let rows = passports.map((passport, index) => (
-      <tr key={index}>
-        <td>{passport.countryName}</td>
-        <td>{passport.countryCode}</td>
-        <td>{passport.visaFree}</td>
-        <td>{passport.eta}</td>
-        <td>{passport.visaOnArrival}</td>
-        <td>{passport.visaRequired}</td>
-      </tr>
+        <tr key={index}>
+            <td>{passport.countryName}</td>
+            <td>{passport.countryCode}</td>
+            <td>{passport.visaFree}</td>
+            <td>{passport.eta}</td>
+            <td>{passport.visaOnArrival}</td>
+            <td>{passport.visaRequired}</td>
+        </tr>
     ));
 
     const style = {
@@ -30,13 +36,15 @@ class PassportRankList extends Component {
     };
 
     async function onClick({ target }) {
-      //console.log(target);
+     
       let country_name = target.getAttribute('name');
 
       let countryInfo = passports.find((passport) => {
         return passport.countryName.includes(country_name);
       });
       if (countryInfo !== undefined) {
+        
+        //eslint-disable-next-line
         let insert_row = (
           <tr>
             <td>{countryInfo.countryName}</td>
@@ -53,6 +61,7 @@ class PassportRankList extends Component {
             .getElementsByTagName('tbody')[0]
         );
         var table = document.getElementById('table-class');
+        //eslint-disable-next-line
         var tbody = table.getElementsByTagName('tbody');
 
         var tableRef = document
@@ -60,6 +69,7 @@ class PassportRankList extends Component {
           .getElementsByTagName('tbody')[0];
 
         var myHtmlContent = `<td>${countryInfo.countryName}</td> <td>${countryInfo.continent}</td>  <td>${countryInfo.visaFree}</td> <td>${countryInfo.visaRequired}</td> <td>${countryInfo.eta}</td> `;
+        //eslint-disable-next-line
         var tableRef = document
           .getElementById('table-class')
           .getElementsByTagName('tbody')[0];
@@ -90,20 +100,21 @@ class PassportRankList extends Component {
         </div>
         <div className="interactive-table">
           <InteractiveTable
+            style = {styles}
             tableStyles={'responsive'}
             dataList={passports}
             columns={{
-              country_name: {
+              countryName: {
                 alias: 'CountryName',
                 sortable: true,
-                active: false,
-                sortingKey: 'country_name',
+                active: false,  
+                sortingKey: 'countryName',
               },
-              country_code: {
+              countryCode: {
                 alias: 'CountryCode',
                 sortable: true,
                 active: false,
-                sortingKey: 'country_code',
+                sortingKey: 'countryCode',
               },
               continent: {
                 alias: 'Continent',
@@ -111,23 +122,23 @@ class PassportRankList extends Component {
                 active: false,
                 sortingKey: 'continent',
               },
-              visa_free: {
+              visaFree: {
                 alias: 'VisaFree',
                 sortable: true,
                 active: false,
-                sortingKey: 'visa_free',
+                sortingKey: 'visaFree',
               },
-              visa_required: {
+              visaRequired: {
                 alias: 'Visa Required',
                 sortable: true,
                 active: false,
-                sortingKey: 'visa_required',
+                sortingKey: 'visaRequired',
               },
-              visa_on_arrival: {
+              visaOnArrival: {
                 alias: 'VisaFree',
                 sortable: true,
                 active: false,
-                sortingKey: 'visa_on_arrival',
+                sortingKey: 'visaOnArrival',
               },
               eta: {
                 alias: 'ETA',
@@ -139,7 +150,7 @@ class PassportRankList extends Component {
             searching={{
               active: true,
               searchPlaceholder: 'Search by Country Name',
-              searchKeys: ['country_name'],
+              searchKeys: ['countryName'],
             }}
             paging={{
               maxRows: 10,
@@ -151,16 +162,9 @@ class PassportRankList extends Component {
             }}
           />
         </div>
-
-        {/*<VectorMap {...world} />;*/}
-        {/*        <VectorMap {...world} layerProps={layerProps} />
-              <hr />
-              <p>Hovered: {hovered && <code>{hovered}</code>}</p>
-              <p>Focused: {focused && <code>{focused}</code>}</p>
-              <p>Clicked: {clicked && <code>{clicked}</code>}</p>*/}
       </div>
     );
   }
 }
 
-export default PassportRankList;
+

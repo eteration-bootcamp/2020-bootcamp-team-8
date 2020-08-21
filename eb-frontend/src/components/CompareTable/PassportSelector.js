@@ -1,7 +1,6 @@
 import React from 'react';
 import Form from 'react-bootstrap/Form';
-import { StylesProvider } from '@material-ui/core';
-import styles from './style.css';
+
 
 
 export default class Selector extends React.Component{
