@@ -90,6 +90,9 @@ npm start
 
 ### Explore Page
 
+<p align="center">
+    <img src="ss/explore.png" width ="500px" text-align="center"/>
+
 Here, you see the individual passports all around the world categorized by continents.
 When you click any passport you see the some numbers at the bottom of the page.
 
@@ -101,11 +104,17 @@ When you click any passport you see the some numbers at the bottom of the page.
 
 ### Compare Page
 
+<p align="center">
+    <img src="ss/compare.png" width ="500px" text-align="center"/>
+
 This page is quite interesting.Here you can compare the passports according to visa requirement type . Also you can see the details of numbers that you've seen on the explore page.You can compare up to 4 passports.
 
 `Just select a passpaort then you will get what is going to be happen`
 
 ### Rank Page
+
+<p align="center">
+    <img src="ss/rank.png" width ="500px" text-align="center"/>
 
 Here you will see How strong your pass is ! 
 
