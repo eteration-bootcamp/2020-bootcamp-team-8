@@ -12,8 +12,8 @@
 
 <br />
 <p align="center">
-  <a>
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+  <a  href="https://icons8.com/icon/762NVag4H9e7/passport">
+    <img src="https://img.icons8.com/cute-clipart/64/000000/passport.png" text-align="center"/>
   </a>
 
   <h2 align="center">PassPal</h2>
