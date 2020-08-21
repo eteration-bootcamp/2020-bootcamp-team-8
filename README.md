@@ -35,6 +35,7 @@
 * [Usage](#usage)
   * [Explore Page](#explore-page)
   * [Compare Page](#compare-page)
+  * [Rank Page](#rank-page)
 * [Acknowledgements](#acknowledgements)
 
 ## About The Project
