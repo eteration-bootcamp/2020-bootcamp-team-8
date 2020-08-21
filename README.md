@@ -8,11 +8,11 @@
 | Frontend Developper | Mahmut Furkan Kara | [![LinkedIn][linkedin-shield-mfk]][linkedin-url-mfk]|
 | Backend Developper, Frontend Developper | Miray Suzan Şenyüz | [![LinkedIn][linkedin-shield-mss]][linkedin-url-mss]|
 | Frontend Developper | Ezgi İmamoğlu      | [![LinkedIn][linkedin-shield-ei]][linkedin-url-ei]|
-| Frontend Developper | Poyraz Özmen       | |
+| Frontend Developper | Poyraz Özmen       | [![LinkedIn][linkedin-shield-po]][linkedin-url-po]|
 
 <br />
 <p align="center">
-    <img src="logo.jpeg" width ="80px" text-align="center"/>
+    <img src="logo.jpeg" width ="120px" text-align="center"/>
   
 
   <h2 align="center">PassPal</h2>
@@ -102,6 +102,10 @@ This page is quite interesting.Here you can compare the passports according to v
 
 `Just select a passpaort then you will get what is going to be happen`
 
+### Rank Page
+
+Here you will see How strong your pass is ! 
+
 ## Acknowledgements
 
 We would like to thank `Eteration` for giving us a chance at this bootcamp, `all our teachers` for training us and our `mentor` who helped us, `HR Team` for notifying us everyday.:heart: 
@@ -114,3 +118,5 @@ We would like to thank `Eteration` for giving us a chance at this bootcamp, `all
 [linkedin-shield-to]:https://img.shields.io/badge/%20-Tunahan%20%C3%96cal-black.svg?style=plastic&logo=linkedin&color=blue
 [linkedin-url-ei]:https://www.linkedin.com/in/ezgi-imamo%C4%9Flu-17295815b/
 [linkedin-shield-ei]:https://img.shields.io/badge/%20-Ezgi%20%C4%B0mamo%C4%9Flu-black.svg?style=plastic&logo=linkedin&color=blueviolet
+[linkedin-url-po]:https://www.linkedin.com/in/poyraz-ozmen/
+[linkedin-shield-po]:https://img.shields.io/badge/%20-Poyraz%20%C3%96zmen-black.svg?style=plastic&logo=linkedin&color=yellow
