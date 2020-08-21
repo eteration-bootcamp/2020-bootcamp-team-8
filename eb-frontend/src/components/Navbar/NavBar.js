@@ -13,11 +13,11 @@ const NavBar = () => {
     <nav className={styles.navbar}>
       <div className={styles.container}>
         <div className={styles.logo}>
-          <Link to={ROUTES.HOME}>
-            <img src={passportLogo} alt="Logo" />
-          </Link>
+          <img src={passportLogo} alt="Logo" />
         </div>
-
+        <div>
+          <h8 className={styles.logoText}>Pass Pall</h8>
+        </div>
         <ul className={styles.menu}>
           <li>
             <NavLink activeClassName={styles.active} to={ROUTES.EXPLORE}>

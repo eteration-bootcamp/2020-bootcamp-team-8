@@ -131,7 +131,7 @@ const CustomGrid = ({ data }) => {
       <Grid container spacing={3} style={{ marginTop: '1rem' }}>
         {_.map(groupedPassports, (continentPassports, continentName) => (
           <React.Fragment key={continentName}>
-            <h1>{continentName}</h1>
+            <h1 style={{ color: '#1c5f71' }}>{continentName}</h1>
             <Grid container item spacing={3} xs={12} md={12}>
               <FormRow passports={continentPassports} />
             </Grid>

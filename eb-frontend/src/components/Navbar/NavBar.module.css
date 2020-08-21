@@ -52,9 +52,18 @@
 
 .menu li a:hover {
   transition: all 0.3s ease-in-out;
-  color: #cec2eb !important;
-  border-bottom: 4px solid #cec2eb;
+  color: #4aa0b8 !important;
+  border-bottom: 4px solid #4aa0b8;
 }
+
+/*
+.logoText {
+  color: white;
+  text-align: center;
+  margin-top: 40px;
+}
+*/
+
 /*
 .active:hover {
   transition: all 0.3s ease-in-out;
