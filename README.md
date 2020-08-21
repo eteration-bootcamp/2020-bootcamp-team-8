@@ -21,7 +21,7 @@
     Have you ever wondered about passports?Take a look at it!
     
    <p align="center">
-    [Checkout PassPal](https://passportapp.azurewebsites.net "PassPal Explore Page")
+    <a href="https://passportapp.azurewebsites.net">Checkout PassPal</a>
   
 <!-- TABLE OF CONTENTS -->
   
