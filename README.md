@@ -19,7 +19,9 @@
 
   <p align="center">
     Have you ever wondered about passports?Take a look at it!
-    https://passportapp.azurewebsites.net/
+    
+   <p align="center">
+    [Checkout PassPal](https://passportapp.azurewebsites.net "PassPal Explore Page")
   
 <!-- TABLE OF CONTENTS -->
   
