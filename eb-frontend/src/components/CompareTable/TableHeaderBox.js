@@ -12,7 +12,7 @@ export default class TableHeaderBox extends React.Component{
             style={{width: "88px", height: "125px", float: "left"}}
             />
             return(
-                <th>
+                <th style={{border: "black solid", borderWidth: "thin"}}>
                     <div class="headerBox">
                         <div>{imageName}</div>
                         <div>
@@ -25,7 +25,7 @@ export default class TableHeaderBox extends React.Component{
         }
         else{
             return(
-                <th>
+                <th style={{border: "black solid", borderWidth: "thin"}}>
                     <div class="headerBox">
                         <div></div>
                         <div>

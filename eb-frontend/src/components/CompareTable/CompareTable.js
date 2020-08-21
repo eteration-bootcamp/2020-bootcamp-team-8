@@ -102,10 +102,10 @@ export default class CompareTable extends React.Component{
         let boxInfo3 = this.state.boxInfo3;
         const loadRelations = this.props.loadRelations;
         return(
-            <Table striped bordered hover responsive variant="dark" size="sm">
+            <Table style={{border: "black solid", borderWidth: "thin"}} striped bordered hover responsive variant="dark" size="sm">
                 <thead>
                 <tr>
-                    <th class="empty"></th>
+                    <th style={{backgroundColor: "#6c757d", borderWidth: "thin"}} class="empty"></th>
                     <PassportSelector data = {data} title ={"Select Passport:"} selectorCallBack={this.selectorCallBack} controlId = {"Selector0"} loadRelations={loadRelations} />
                     <PassportSelector data = {data} title ={"Compare To:"} selectorCallBack={this.selectorCallBack} controlId = {"Selector1"} loadRelations={loadRelations}  />
                     <PassportSelector data = {data} title ={"Compare To:"} selectorCallBack={this.selectorCallBack} controlId = {"Selector2"} loadRelations={loadRelations}/>
@@ -114,7 +114,7 @@ export default class CompareTable extends React.Component{
                 </thead>
                 <thead>
                     <tr>
-                        <th className={styles.headerBox}>
+                        <th style={{border: "black solid", borderWidth: "thin"}} className={styles.headerBox}>
                         <div style={{width: "88px", height: "125px"}}></div>
                         <div></div>
                         <div></div>
@@ -159,7 +159,7 @@ export default class CompareTable extends React.Component{
                     }
                     return(
                         <tr>
-                            <td style={{verticalAlign: "middle"}}>
+                            <td style={{verticalAlign: "middle", border: "black solid", borderWidth: "thin"}}>
                                 <img src={require('./../../../public/images/png_128/'+passport.countryName.toLowerCase()+'.png')} 
                                 width="50px" height ="40px" alt="flag"
                                 style={{float: "left", paddingRight: "5px"}}

@@ -50,8 +50,14 @@
   height: 78px;
 }
 
-.active {
+.menu li a:hover {
   transition: all 0.3s ease-in-out;
-  color: #f56565 !important;
-  border-bottom: 4px solid #f56565;
+  color: #cec2eb !important;
+  border-bottom: 4px solid #cec2eb;
 }
+/*
+.active:hover {
+  transition: all 0.3s ease-in-out;
+  color: #9BC4BC !important;
+  border-bottom: 4px solid #9BC4BC;
+}*/
