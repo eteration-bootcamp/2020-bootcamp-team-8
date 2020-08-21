@@ -1,5 +1,7 @@
 import React from 'react';
 import logo from '../../images/logo.png';
+import passportLogo from '../../images/passportLogo.png';
+
 import { Link, NavLink } from 'react-router-dom';
 
 import styles from './NavBar.module.css';
@@ -12,7 +14,7 @@ const NavBar = () => {
       <div className={styles.container}>
         <div className={styles.logo}>
           <Link to={ROUTES.HOME}>
-            <img src={logo} alt="Logo" />
+            <img src={passportLogo} alt="Logo" />
           </Link>
         </div>
 
